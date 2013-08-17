@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WP-Resizely - Responsive image scaling.
+Plugin Name: WP-Resizely
 Plugin URI: http://usabilitydynamics.com/products/wp-resizely/
 Description: Dynamic image resizing.
 Author: Usability Dynamics, Inc.
@@ -25,14 +25,17 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-/** Plugin Version */
+// Plugin Version
 define( 'WP_Resizely_Version', '0.1.0' );
 
-/** Path for Includes */
+// Path for Includes
 define( 'WP_Resizely_Path', untrailingslashit( plugin_dir_path( __FILE__ ) ));
 
-/** Path for front-end links */
+// Path for front-end links
 define( 'WP_Resizely_URL', untrailingslashit(plugin_dir_url( __FILE__ )));
+
+// Locale Name
+define( 'WP_Resizely_Locale', 'wp-resizely' );
 
 /** Loads general functions used by WP-crm */
 include_once WP_Resizely_Path . '/core/class_functions.php';
