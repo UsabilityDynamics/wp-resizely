@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP-Resizely\n"
+"POT-Creation-Date: 2013-08-17 17:28-0500\n"
+"PO-Revision-Date: 2013-08-17 17:29-0500\n"
+"Last-Translator: Andy Potanin <andy.potanin@usabilitydynamics.com>\n"
+"Language-Team: Usability Dynamics, Inc. <info@usabilitydynamics.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: /Products/wp-resizely\n"
+
+#: /Products/wp-resizely/core/class_core.php:45
+msgid "Resize.ly"
+msgstr ""
+
+#: /Products/wp-resizely/core/class_core.php:62
+#, fuzzy
+msgid "Settings"
+msgstr "настройки"
+
+#: /Products/wp-resizely/core/ui/wp-resizely.php:16
+msgid "Resize.ly Settings"
+msgstr ""

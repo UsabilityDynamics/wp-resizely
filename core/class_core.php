@@ -42,9 +42,17 @@ class WP_Resizely_Core {
     add_filter('plugin_action_links', array( __CLASS__, 'plugin_action_links'), 10, 2 );
 
     // Settings page.
-    add_options_page( __( 'Resize.ly', WP_Resizely_Locale ), __( 'Resize.ly', WP_Resizely_Locale), 'manage_options', 'wp-resizely', function() {
+    add_options_page( __( 'Resize.ly', WP_Resizely_Locale ), __( 'Resize.ly', WP_Resizely_Locale ), 'manage_options', 'wp-resizely', function() {
       include( WP_Resizely_Path . '/core/ui/wp-resizely.php' );
     });
+
+    //** Make Property Featured Via AJAX */
+    if( isset( $_REQUEST[ '_wpnonce' ] ) ) {
+      if( wp_verify_nonce( $_REQUEST[ '_wpnonce' ], 'wp-resizely-settings' )) {
+        update_option( 'wp-resizely', json_encode( $_REQUEST[ 'options' ] ) );
+        wp_redirect( admin_url( 'options-general.php?page=wp-resizely&updated=true' ) );
+      }
+    }
 
   }
 
@@ -56,7 +64,7 @@ class WP_Resizely_Core {
    * @for WP_Resizely_Core
    * @since 0.1.0
    */
-  function plugin_action_links( $links, $file ){
+  function plugin_action_links( $links, $file ) {
 
     if ( $file == 'wp-resizely/wp-resizely.php' ){
       array_unshift( $links, '<a href="' . admin_url( 'options-general.php?page=wp-resizely' ) . '">' . __( 'Settings' ) . '</a>' ); // before other links
