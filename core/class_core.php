@@ -12,9 +12,9 @@
 class WP_Resizely_Core {
 
   /**
-   * Constructor.
+   * Core constructor.
    *
-   * @for WP_Resizely_Functions
+   * @for WP_Resizely_Core
    * @author potanin@UD
    * @since 0.1.0
    */
@@ -25,6 +25,9 @@ class WP_Resizely_Core {
     // Add Settings Page
     add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ));
 
+    // wp_enqueue_scripts action hook to link only on the front-end
+    add_action( 'wp_enqueue_scripts', array( __CLASS__, 'wp_enqueue_scripts' ));
+    add_action( 'wp_footer', array( __CLASS__, 'wp_footer' ));
 
   }
 
@@ -52,6 +55,34 @@ class WP_Resizely_Core {
         wp_redirect( admin_url( 'options-general.php?page=wp-resizely&updated=true' ) );
       }
     }
+
+  }
+
+  /**
+   * Initialize Resize.ly client in footer
+   *
+   * @author potanin@UD
+   * @for WP_Resizely_Core
+   * @since 0.1.0
+   */
+  static function wp_footer() {
+    echo "<script>jQuery( document ).ready( function ( $ ) {  $( 'img[data-src]' ).resizely( WP_Resizely ); });</script>";
+  }
+
+  /**
+   * Enqueue Resize.ly client-side script(s)
+   *
+   * @author potanin@UD
+   * @for WP_Resizely_Core
+   * @since 0.1.0
+   */
+  static function wp_enqueue_scripts() {
+
+    // Enqueue Resize.ly client-side library
+    wp_enqueue_script( 'wp-resizely', WP_Resizely_URL . '/vendor/resizely-client/build/jquery.resizely.min.js', array( 'jquery' ));
+
+    // Localize Resize.ly client options
+    wp_localize_script( 'wp-resizely', 'WP_Resizely', (array) WP_Resizely_Functions::options() );
 
   }
 

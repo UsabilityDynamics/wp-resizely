@@ -11,14 +11,6 @@
 class WP_Resizely_Functions {
 
   /**
-   * Constructor
-   *
-   * @for WP_Resizely_Functions
-   * @author potanin@UD
-   */
-  function WP_Resizely_Functions() {}
-
-  /**
    * Get options object.
    *
    * @for WP_Resizely_Functions

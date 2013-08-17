@@ -30,13 +30,16 @@
 define( 'WP_Resizely_Version', '0.1.0' );
 
 // Path for Includes
-define( 'WP_Resizely_Path', untrailingslashit( plugin_dir_path( __FILE__ ) ));
+define( 'WP_Resizely_Path', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
+
+// Clean directory name
+define( 'WP_Resizely_Directory', basename( __DIR__  ) );
 
 // Path for front-end links
-define( 'WP_Resizely_URL', untrailingslashit(plugin_dir_url( __FILE__ )));
+define( 'WP_Resizely_URL', untrailingslashit( plugins_url( basename( __DIR__  )) ) );
 
 // Locale Name
-define( 'WP_Resizely_Locale', 'wp-resizely' );
+define( 'WP_Resizely_Locale', WP_Resizely_Directory );
 
 /** Loads general functions used by WP-crm */
 include_once WP_Resizely_Path . '/core/class_functions.php';
