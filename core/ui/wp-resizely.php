@@ -22,17 +22,18 @@ $options = WP_Resizely_Functions::options();
     <?php wp_nonce_field( 'wp-resizely-settings' ); ?>
 
     <table class="form-table">
-      <tr valign="top">
+
+      <?php /*<tr valign="top">
         <th scope="row"><label for="blogname"><?php _e( 'Site Title' ) ?></label></th>
         <td><input name="options[blogname]" type="text" id="blogname" value="<?php echo $options->blogname; ?>" class="regular-text" /></td>
-      </tr>
+      </tr>*/ ?>
 
       <tr valign="top">
         <th scope="row"><?php _e( 'Options' ) ?></th>
         <td>
 
           <ul>
-            <li><label><input name="options[users_can_register]" type="checkbox" value="1" <?php checked( '1', $options->users_can_register  ); ?> />Users can register?</label></li>
+            <li><label><input name="options[disable_resizely]" type="checkbox" value="true" <?php checked( true, $options->disable_resizely  ); ?> /> <?php _e( 'Disable Resize.ly', WP_Resizely_Locale ); ?></label></li>
           </ul>
 
         </td>

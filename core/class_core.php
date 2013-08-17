@@ -20,14 +20,17 @@ class WP_Resizely_Core {
    */
   function WP_Resizely_Core() {
 
-    // $options = WP_Resizely_Functions::options();
+    $options = WP_Resizely_Functions::options();
 
     // Add Settings Page
     add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ));
 
-    // wp_enqueue_scripts action hook to link only on the front-end
-    add_action( 'wp_enqueue_scripts', array( __CLASS__, 'wp_enqueue_scripts' ));
-    add_action( 'wp_footer', array( __CLASS__, 'wp_footer' ));
+
+    // Enable resizely unless explicitly disabled.
+    if( $options->disable_resizely !== true ) {
+      add_action( 'wp_enqueue_scripts', array( __CLASS__, 'wp_enqueue_scripts' ));
+      add_action( 'wp_footer', array( __CLASS__, 'wp_footer' ));
+    }
 
   }
 

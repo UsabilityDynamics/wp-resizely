@@ -18,7 +18,26 @@ class WP_Resizely_Functions {
    * @return array|mixed
    */
   static function options() {
-    return json_decode( get_option( 'wp-resizely' ) );
+    $options = json_decode( get_option( 'wp-resizely' ) );
+
+    foreach ( $options as $key => $option ) {
+
+      // Convert booleans
+      if( $option === 'true' ) {
+        $options->{$key} = true;
+      }
+
+      // Convert booleans
+      if( $option === 'false' ) {
+        $options->{$key} = false;
+      }
+
+    }
+
+    // die( print_r( $options ) );
+
+    return $options;
+
   }
 
   /**
