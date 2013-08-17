@@ -1,0 +1,100 @@
+{
+    "project": {
+        "name": "WP-Resizely",
+        "description": "WordPress client for Resize.ly",
+        "version": "0.1.0",
+        "url": "https://github.com/UsabilityDynamics/wp-resizely",
+        "logo": "http://a3d72a45d111006ec192-ec5b80a12b0b09b4d52373336afb4254.r80.cf1.rackcdn.com/usability-dynamics.png"
+    },
+    "files": {
+        "core/class_core.php": {
+            "name": "core/class_core.php",
+            "modules": {},
+            "classes": {
+                "WP_Resizely_Core": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "core/class_functions.php": {
+            "name": "core/class_functions.php",
+            "modules": {},
+            "classes": {
+                "WP_Resizely_Functions": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "WP_Resizely_Core": {
+            "name": "WP_Resizely_Core",
+            "shortname": "WP_Resizely_Core",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "core/class_core.php",
+            "line": 2,
+            "description": "-\n\n-",
+            "author": ": potanin@UD",
+            "date": ": 8/17/13",
+            "time": ": 2:06 PM"
+        },
+        "WP_Resizely_Functions": {
+            "name": "WP_Resizely_Functions",
+            "shortname": "WP_Resizely_Functions",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "core/class_functions.php",
+            "line": 2,
+            "description": "-\n\n-",
+            "author": ": potanin@UD",
+            "date": ": 8/17/13",
+            "time": ": 2:06 PM"
+        }
+    },
+    "classitems": [
+        {
+            "file": "core/class_core.php",
+            "line": 16,
+            "class": "WP_Resizely_Core"
+        },
+        {
+            "file": "core/class_functions.php",
+            "line": 16,
+            "class": "WP_Resizely_Functions"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: date",
+            "line": " core/class_core.php:2"
+        },
+        {
+            "message": "unknown tag: time",
+            "line": " core/class_core.php:2"
+        },
+        {
+            "message": "unknown tag: date",
+            "line": " core/class_functions.php:2"
+        },
+        {
+            "message": "unknown tag: time",
+            "line": " core/class_functions.php:2"
+        },
+        {
+            "message": "Missing item type",
+            "line": " core/class_core.php:16"
+        },
+        {
+            "message": "Missing item type",
+            "line": " core/class_functions.php:16"
+        }
+    ]
+}

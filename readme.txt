@@ -5,7 +5,7 @@ Tags: responsive, dom, html5, image, cdn
 Requires at least: 3.6
 Tested up to: 3.6
 Stable tag: 0.1.0
-Resize.ly service lets you dynamically resize images.
+Your images resized, responsive, and retina ready with all the magic happening in the cloud.
 
 == Description ==
 
