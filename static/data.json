@@ -7,13 +7,23 @@
         "logo": "http://a3d72a45d111006ec192-ec5b80a12b0b09b4d52373336afb4254.r80.cf1.rackcdn.com/usability-dynamics.png"
     },
     "files": {
+        "core/ui/wp-resizely.php": {
+            "name": "core/ui/wp-resizely.php",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "core/class_core.php": {
             "name": "core/class_core.php",
             "modules": {},
             "classes": {
                 "WP_Resizely_Core": 1
             },
-            "fors": {},
+            "fors": {
+                "WP_Resizely_Functions": 1,
+                "WP_Resizely_Core": 1
+            },
             "namespaces": {}
         },
         "core/class_functions.php": {
@@ -22,7 +32,9 @@
             "classes": {
                 "WP_Resizely_Functions": 1
             },
-            "fors": {},
+            "fors": {
+                "WP_Resizely_Functions": 1
+            },
             "namespaces": {}
         }
     },
@@ -38,7 +50,7 @@
             "extension_for": [],
             "file": "core/class_core.php",
             "line": 2,
-            "description": "-\n\n-",
+            "description": "-",
             "author": ": potanin@UD",
             "date": ": 8/17/13",
             "time": ": 2:06 PM"
@@ -53,7 +65,7 @@
             "extension_for": [],
             "file": "core/class_functions.php",
             "line": 2,
-            "description": "-\n\n-",
+            "description": "General Resize.ly Options",
             "author": ": potanin@UD",
             "date": ": 8/17/13",
             "time": ": 2:06 PM"
@@ -61,18 +73,87 @@
     },
     "classitems": [
         {
+            "file": "core/ui/wp-resizely.php",
+            "line": 2,
+            "description": "-\n\n-\n\nCreated by JetBrains PhpStorm.",
+            "user": ": potanin@UD",
+            "date": ": 8/17/13",
+            "time": ": 4:27 PM",
+            "class": "WP_Resizely_Core"
+        },
+        {
             "file": "core/class_core.php",
-            "line": 16,
+            "line": 14,
+            "description": "Constructor.",
+            "author": "potanin@UD",
+            "since": "0.1.0",
+            "class": "WP_Resizely_Functions"
+        },
+        {
+            "file": "core/class_core.php",
+            "line": 31,
+            "description": "Administrative Menu.",
+            "author": "potanin@UD",
+            "since": "0.1.0",
+            "class": "WP_Resizely_Core"
+        },
+        {
+            "file": "core/class_core.php",
+            "line": 58,
+            "description": "Adds \"Settings\" link to the plugin overview page",
+            "author": "potanin@UD",
+            "since": "0.1.0",
             "class": "WP_Resizely_Core"
         },
         {
             "file": "core/class_functions.php",
-            "line": 16,
+            "line": 13,
+            "description": "Constructor",
+            "author": "potanin@UD",
+            "class": "WP_Resizely_Functions"
+        },
+        {
+            "file": "core/class_functions.php",
+            "line": 21,
+            "description": "Get options object.",
+            "author": "potanin@UD",
+            "return": {
+                "description": "array|mixed"
+            },
+            "class": "WP_Resizely_Functions"
+        },
+        {
+            "file": "core/class_functions.php",
+            "line": 32,
+            "description": "Activate Plugin.",
+            "todo": [
+                "Does not seem to trigger. -potanin@UD"
+            ],
+            "author": "potanin@UD",
+            "class": "WP_Resizely_Functions"
+        },
+        {
+            "file": "core/class_functions.php",
+            "line": 43,
+            "description": "Deactivate Plugin",
+            "author": "potanin@UD",
             "class": "WP_Resizely_Functions"
         }
     ],
     "warnings": [
         {
+            "message": "unknown tag: user",
+            "line": " core/ui/wp-resizely.php:2"
+        },
+        {
+            "message": "unknown tag: date",
+            "line": " core/ui/wp-resizely.php:2"
+        },
+        {
+            "message": "unknown tag: time",
+            "line": " core/ui/wp-resizely.php:2"
+        },
+        {
             "message": "unknown tag: date",
             "line": " core/class_core.php:2"
         },
@@ -89,12 +170,36 @@
             "line": " core/class_functions.php:2"
         },
         {
-            "message": "Missing item type",
-            "line": " core/class_core.php:16"
+            "message": "Missing item type\n-\n\n-\n\nCreated by JetBrains PhpStorm.",
+            "line": " core/ui/wp-resizely.php:2"
         },
         {
-            "message": "Missing item type",
-            "line": " core/class_functions.php:16"
+            "message": "Missing item type\nConstructor.",
+            "line": " core/class_core.php:14"
+        },
+        {
+            "message": "Missing item type\nAdministrative Menu.",
+            "line": " core/class_core.php:31"
+        },
+        {
+            "message": "Missing item type\nAdds \"Settings\" link to the plugin overview page",
+            "line": " core/class_core.php:58"
+        },
+        {
+            "message": "Missing item type\nConstructor",
+            "line": " core/class_functions.php:13"
+        },
+        {
+            "message": "Missing item type\nGet options object.",
+            "line": " core/class_functions.php:21"
+        },
+        {
+            "message": "Missing item type\nActivate Plugin.",
+            "line": " core/class_functions.php:32"
+        },
+        {
+            "message": "Missing item type\nDeactivate Plugin",
+            "line": " core/class_functions.php:43"
         }
     ]
 }

@@ -92,8 +92,6 @@
 /**
  * -
  *
- * -
- *
  * @class WP_Resizely_Core
  * @author: potanin@UD
  * @date: 8/17/13
@@ -104,10 +102,64 @@
 class WP_Resizely_Core {
 
   /**
+   * Constructor.
    *
-   *
+   * @for WP_Resizely_Functions
+   * @author potanin@UD
+   * @since 0.1.0
    */
   function WP_Resizely_Core() {
+
+    // $options = WP_Resizely_Functions::options();
+
+    // Add Settings Page
+    add_action( &#x27;admin_menu&#x27;, array( __CLASS__, &#x27;admin_menu&#x27; ));
+
+
+  }
+
+  /**
+   * Administrative Menu.
+   *
+   * @author potanin@UD
+   * @for WP_Resizely_Core
+   * @since 0.1.0
+   */
+  static function admin_menu() {
+
+    // Plugin Settings link.
+    add_filter(&#x27;plugin_action_links&#x27;, array( __CLASS__, &#x27;plugin_action_links&#x27;), 10, 2 );
+
+    // Settings page.
+    add_options_page( __( &#x27;Resize.ly&#x27;, WP_Resizely_Locale ), __( &#x27;Resize.ly&#x27;, WP_Resizely_Locale ), &#x27;manage_options&#x27;, &#x27;wp-resizely&#x27;, function() {
+      include( WP_Resizely_Path . &#x27;/core/ui/wp-resizely.php&#x27; );
+    });
+
+    //** Make Property Featured Via AJAX */
+    if( isset( $_REQUEST[ &#x27;_wpnonce&#x27; ] ) ) {
+      if( wp_verify_nonce( $_REQUEST[ &#x27;_wpnonce&#x27; ], &#x27;wp-resizely-settings&#x27; )) {
+        update_option( &#x27;wp-resizely&#x27;, json_encode( $_REQUEST[ &#x27;options&#x27; ] ) );
+        wp_redirect( admin_url( &#x27;options-general.php?page=wp-resizely&amp;updated=true&#x27; ) );
+      }
+    }
+
+  }
+
+  /**
+   * Adds &quot;Settings&quot; link to the plugin overview page
+   *
+   *
+   * @author potanin@UD
+   * @for WP_Resizely_Core
+   * @since 0.1.0
+   */
+  static function plugin_action_links( $links, $file ) {
+
+    if ( $file == &#x27;wp-resizely/wp-resizely.php&#x27; ){
+      array_unshift( $links, &#x27;&lt;a href=&quot;&#x27; . admin_url( &#x27;options-general.php?page=wp-resizely&#x27; ) . &#x27;&quot;&gt;&#x27; . __( &#x27;Settings&#x27; ) . &#x27;&lt;/a&gt;&#x27; ); // before other links
+    }
+
+    return $links;
 
   }
 

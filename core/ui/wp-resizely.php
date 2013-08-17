@@ -11,7 +11,8 @@
  *
  */
 
-$options = json_decode( get_option( 'wp-resizely' ) );
+$options = WP_Resizely_Functions::options();
+
 ?>
 <div class="wrap">
   <?php screen_icon(); ?>

@@ -2,8 +2,6 @@
 /**
  * -
  *
- * -
- *
  * @class WP_Resizely_Core
  * @author: potanin@UD
  * @date: 8/17/13
@@ -22,6 +20,7 @@ class WP_Resizely_Core {
    */
   function WP_Resizely_Core() {
 
+    // $options = WP_Resizely_Functions::options();
 
     // Add Settings Page
     add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ));
@@ -64,7 +63,7 @@ class WP_Resizely_Core {
    * @for WP_Resizely_Core
    * @since 0.1.0
    */
-  function plugin_action_links( $links, $file ) {
+  static function plugin_action_links( $links, $file ) {
 
     if ( $file == 'wp-resizely/wp-resizely.php' ){
       array_unshift( $links, '<a href="' . admin_url( 'options-general.php?page=wp-resizely' ) . '">' . __( 'Settings' ) . '</a>' ); // before other links

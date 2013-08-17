@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>core/class_functions.php - WP-Resizely</title>
+    <title>core/ui/wp-resizely.php - WP-Resizely</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -84,61 +84,57 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: core/class_functions.php</h1>
+                        <h1 class="file-heading">File: core/ui/wp-resizely.php</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 &lt;?php
 /**
- * General Resize.ly Options
+ * -
  *
- * @class WP_Resizely_Functions
- * @author: potanin@UD
+ * -
+ *
+ * Created by JetBrains PhpStorm.
+ * @user: potanin@UD
  * @date: 8/17/13
- * @time: 2:06 PM
- * 
+ * @time: 4:27 PM
+ *
  */
-class WP_Resizely_Functions {
 
-  /**
-   * Constructor
-   *
-   * @for WP_Resizely_Functions
-   * @author potanin@UD
-   */
-  function WP_Resizely_Functions() {}
+$options = WP_Resizely_Functions::options();
 
-  /**
-   * Get options object.
-   *
-   * @for WP_Resizely_Functions
-   * @author potanin@UD
-   * @return array|mixed
-   */
-  static function options() {
-    return json_decode( get_option( &#x27;wp-resizely&#x27; ) );
-  }
+?&gt;
+&lt;div class=&quot;wrap&quot;&gt;
+  &lt;?php screen_icon(); ?&gt;
+  &lt;h2&gt;&lt;?php _e( &#x27;Resize.ly Settings&#x27;, WP_Resizely_Locale ); ?&gt;&lt;/h2&gt;
 
-  /**
-   * Activate Plugin.
-   *
-   * @todo Does not seem to trigger. -potanin@UD
-   * @for WP_Resizely_Functions
-   * @author potanin@UD
-   */
-  static function activation() {
-    update_option( &#x27;wp-resizely-version&#x27;, WP_Resizely_Version );
-  }
+  &lt;form method=&quot;post&quot; action=&quot;&quot; /&gt;
+    &lt;?php wp_nonce_field( &#x27;wp-resizely-settings&#x27; ); ?&gt;
 
-  /**
-   * Deactivate Plugin
-   *
-   * @for WP_Resizely_Functions
-   * @author potanin@UD
-   */
-  static function deactivation() {}
+    &lt;table class=&quot;form-table&quot;&gt;
+      &lt;tr valign=&quot;top&quot;&gt;
+        &lt;th scope=&quot;row&quot;&gt;&lt;label for=&quot;blogname&quot;&gt;&lt;?php _e( &#x27;Site Title&#x27; ) ?&gt;&lt;/label&gt;&lt;/th&gt;
+        &lt;td&gt;&lt;input name=&quot;options[blogname]&quot; type=&quot;text&quot; id=&quot;blogname&quot; value=&quot;&lt;?php echo $options-&gt;blogname; ?&gt;&quot; class=&quot;regular-text&quot; /&gt;&lt;/td&gt;
+      &lt;/tr&gt;
 
-}
+      &lt;tr valign=&quot;top&quot;&gt;
+        &lt;th scope=&quot;row&quot;&gt;&lt;?php _e( &#x27;Options&#x27; ) ?&gt;&lt;/th&gt;
+        &lt;td&gt;
+
+          &lt;ul&gt;
+            &lt;li&gt;&lt;label&gt;&lt;input name=&quot;options[users_can_register]&quot; type=&quot;checkbox&quot; value=&quot;1&quot; &lt;?php checked( &#x27;1&#x27;, $options-&gt;users_can_register  ); ?&gt; /&gt;Users can register?&lt;/label&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+    &lt;/table&gt;
+
+    &lt;?php submit_button(); ?&gt;
+
+  &lt;/form&gt;
+
+&lt;/div&gt;
     </pre>
 </div>
 
