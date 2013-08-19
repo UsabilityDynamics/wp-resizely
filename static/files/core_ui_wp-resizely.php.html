@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.0</em>
+            <em>API Docs for: 0.1.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -112,17 +112,18 @@ $options = WP_Resizely_Functions::options();
     &lt;?php wp_nonce_field( &#x27;wp-resizely-settings&#x27; ); ?&gt;
 
     &lt;table class=&quot;form-table&quot;&gt;
-      &lt;tr valign=&quot;top&quot;&gt;
+
+      &lt;?php /*&lt;tr valign=&quot;top&quot;&gt;
         &lt;th scope=&quot;row&quot;&gt;&lt;label for=&quot;blogname&quot;&gt;&lt;?php _e( &#x27;Site Title&#x27; ) ?&gt;&lt;/label&gt;&lt;/th&gt;
         &lt;td&gt;&lt;input name=&quot;options[blogname]&quot; type=&quot;text&quot; id=&quot;blogname&quot; value=&quot;&lt;?php echo $options-&gt;blogname; ?&gt;&quot; class=&quot;regular-text&quot; /&gt;&lt;/td&gt;
-      &lt;/tr&gt;
+      &lt;/tr&gt;*/ ?&gt;
 
       &lt;tr valign=&quot;top&quot;&gt;
         &lt;th scope=&quot;row&quot;&gt;&lt;?php _e( &#x27;Options&#x27; ) ?&gt;&lt;/th&gt;
         &lt;td&gt;
 
           &lt;ul&gt;
-            &lt;li&gt;&lt;label&gt;&lt;input name=&quot;options[users_can_register]&quot; type=&quot;checkbox&quot; value=&quot;1&quot; &lt;?php checked( &#x27;1&#x27;, $options-&gt;users_can_register  ); ?&gt; /&gt;Users can register?&lt;/label&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;label&gt;&lt;input name=&quot;options[disable_resizely]&quot; type=&quot;checkbox&quot; value=&quot;true&quot; &lt;?php checked( true, $options-&gt;disable_resizely  ); ?&gt; /&gt; &lt;?php _e( &#x27;Disable Resize.ly&#x27;, WP_Resizely_Locale ); ?&gt;&lt;/label&gt;&lt;/li&gt;
           &lt;/ul&gt;
 
         &lt;/td&gt;

@@ -1,7 +1,7 @@
 {
   "name": "WP-Resizely",
   "description": "WordPress client for Resize.ly",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "url": "https://github.com/UsabilityDynamics/wp-resizely",
   "logo": "http://a3d72a45d111006ec192-ec5b80a12b0b09b4d52373336afb4254.r80.cf1.rackcdn.com/usability-dynamics.png",
   "options": {

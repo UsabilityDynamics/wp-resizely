@@ -4,7 +4,7 @@
  * Plugin URI: http://usabilitydynamics.com/products/wp-resizely/
  * Description: Dynamic image resizing.
  * Author: Usability Dynamics, Inc.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author URI: http://usabilitydynamics.com
  *
  * Copyright 2013  Usability Dynamics, Inc.    (email : info@usabilitydynamics.com)
@@ -27,7 +27,7 @@
  */
 
 // Plugin Version
-define( 'WP_Resizely_Version', '0.1.0' );
+define( 'WP_Resizely_Version', '0.1.1' );
 
 // Path for Includes
 define( 'WP_Resizely_Path', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
@@ -47,12 +47,14 @@ include_once WP_Resizely_Path . '/core/class_functions.php';
 /** Loads all the metaboxes for the crm page */
 include_once WP_Resizely_Path . '/core/class_core.php';
 
-// Register activation hook -> has to be in the main plugin file
-register_activation_hook( __FILE__, array( 'WP_Resizely_Functions', 'activation' ));
+// Register activation hook.
+register_activation_hook( __FILE__, array( WP_Resizely_Functions, 'activation' ));
 
-// Register activation hook -> has to be in the main plugin file
-register_deactivation_hook( __FILE__, array( 'WP_Resizely_Functions', 'deactivation' ));
+// Register activation hook.
+register_deactivation_hook( __FILE__, array( WP_Resizely_Functions, 'deactivation' ));
 
-// Initiate the plugin
+// Initiate the plugin.
 add_action( 'plugins_loaded', create_function('', 'new WP_Resizely_Core;'));
 
+// Register Resize.ly shortcode.
+add_shortcode( 'resizely', array( WP_Resizely_Functions, 'shortcode' ) );

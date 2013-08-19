@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.0</em>
+            <em>API Docs for: 0.1.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -101,14 +101,6 @@
 class WP_Resizely_Functions {
 
   /**
-   * Constructor
-   *
-   * @for WP_Resizely_Functions
-   * @author potanin@UD
-   */
-  function WP_Resizely_Functions() {}
-
-  /**
    * Get options object.
    *
    * @for WP_Resizely_Functions
@@ -116,7 +108,73 @@ class WP_Resizely_Functions {
    * @return array|mixed
    */
   static function options() {
-    return json_decode( get_option( &#x27;wp-resizely&#x27; ) );
+    $options = json_decode( get_option( &#x27;wp-resizely&#x27; ) );
+
+    foreach ( $options as $key =&gt; $option ) {
+
+      // Convert booleans
+      if( $option === &#x27;true&#x27; ) {
+        $options-&gt;{$key} = true;
+      }
+
+      // Convert booleans
+      if( $option === &#x27;false&#x27; ) {
+        $options-&gt;{$key} = false;
+      }
+
+    }
+
+    // die( print_r( $options ) );
+
+    return $options;
+
+  }
+
+
+  /**
+   * Administrative Menu.
+   *
+   * @author potanin@UD
+   * @for WP_Resizely_Functions
+   * @since 0.1.0
+   */
+  static function shortcode( $atts ) {
+
+    // Set default attributes/
+    $atts = shortcode_atts( array(
+      &#x27;id&#x27; =&gt; null,
+      &#x27;url&#x27; =&gt; null,
+      &#x27;width&#x27; =&gt; &#x27;100%&#x27;,
+      &#x27;class&#x27; =&gt; &#x27;&#x27;,
+      &#x27;alt&#x27; =&gt; &#x27;&#x27;,
+      &#x27;height&#x27; =&gt; &#x27;auto&#x27;
+    ), $atts );
+
+    // Default class.
+    $class = array( &#x27;resizely&#x27; );
+
+    // Add custom classes to be concatenated later.
+    if( $atts[ &#x27;class&#x27; ]  ) {
+      $atts[] = $atts[ &#x27;class&#x27; ];
+    }
+
+    // Resolve ID to url.
+    $atts[ &#x27;src&#x27; ] = array_shift( wp_get_attachment_image_src( $atts[ &#x27;id&#x27; ], null, null, true ) );
+
+    // @todo Add automatic &quot;alt&quot; lookup based on Media Library post object.
+
+    // Create HTML element tags.
+    $tags = array(
+      &#x27;data-src=&quot;&#x27; . $atts[ &#x27;src&#x27; ] . &#x27;&quot;&#x27;,
+      &#x27;width=&quot;&#x27; . $atts[ &#x27;width&#x27; ] . &#x27;&quot;&#x27;,
+      &#x27;height=&quot;&#x27; . $atts[ &#x27;height&#x27; ] . &#x27;&quot;&#x27;,
+      &#x27;alt=&quot;&#x27; . $atts[ &#x27;alt&#x27; ] . &#x27;&quot;&#x27;,
+      &#x27;class=&quot;&#x27; . implode( &#x27; &#x27;, $class ) . &#x27;&quot;&#x27;
+    );
+
+    // Combine into HTML element.
+    return &#x27;&lt;img &#x27; . implode( &#x27; &#x27;, $tags ) . &#x27; /&gt;&#x27;;
+
   }
 
   /**

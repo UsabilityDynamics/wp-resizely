@@ -32,6 +32,7 @@ class WP_Resizely_Core {
       add_action( 'wp_footer', array( __CLASS__, 'wp_footer' ));
     }
 
+
   }
 
   /**
@@ -84,8 +85,16 @@ class WP_Resizely_Core {
     // Enqueue Resize.ly client-side library
     wp_enqueue_script( 'wp-resizely', WP_Resizely_URL . '/vendor/resizely-client/build/jquery.resizely.min.js', array( 'jquery' ));
 
+    $options = (array) WP_Resizely_Functions::options();
+
+    $options[ 'home_url' ] = home_url();
+
+    if( is_ssl() ) {
+      $options[ 'is_ssl' ] = true;
+    }
+
     // Localize Resize.ly client options
-    wp_localize_script( 'wp-resizely', 'WP_Resizely', (array) WP_Resizely_Functions::options() );
+    wp_localize_script( 'wp-resizely', 'WP_Resizely', $options );
 
   }
 
@@ -108,3 +117,4 @@ class WP_Resizely_Core {
   }
 
 }
+

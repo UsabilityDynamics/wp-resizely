@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.0</em>
+            <em>API Docs for: 0.1.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -102,18 +102,25 @@
 class WP_Resizely_Core {
 
   /**
-   * Constructor.
+   * Core constructor.
    *
-   * @for WP_Resizely_Functions
+   * @for WP_Resizely_Core
    * @author potanin@UD
    * @since 0.1.0
    */
   function WP_Resizely_Core() {
 
-    // $options = WP_Resizely_Functions::options();
+    $options = WP_Resizely_Functions::options();
 
     // Add Settings Page
     add_action( &#x27;admin_menu&#x27;, array( __CLASS__, &#x27;admin_menu&#x27; ));
+
+
+    // Enable resizely unless explicitly disabled.
+    if( $options-&gt;disable_resizely !== true ) {
+      add_action( &#x27;wp_enqueue_scripts&#x27;, array( __CLASS__, &#x27;wp_enqueue_scripts&#x27; ));
+      add_action( &#x27;wp_footer&#x27;, array( __CLASS__, &#x27;wp_footer&#x27; ));
+    }
 
 
   }
@@ -146,6 +153,42 @@ class WP_Resizely_Core {
   }
 
   /**
+   * Initialize Resize.ly client in footer
+   *
+   * @author potanin@UD
+   * @for WP_Resizely_Core
+   * @since 0.1.0
+   */
+  static function wp_footer() {
+    echo &quot;&lt;script&gt;jQuery( document ).ready( function ( $ ) {  $( &#x27;img[data-src]&#x27; ).resizely( WP_Resizely ); });&lt;/script&gt;&quot;;
+  }
+
+  /**
+   * Enqueue Resize.ly client-side script(s)
+   *
+   * @author potanin@UD
+   * @for WP_Resizely_Core
+   * @since 0.1.0
+   */
+  static function wp_enqueue_scripts() {
+
+    // Enqueue Resize.ly client-side library
+    wp_enqueue_script( &#x27;wp-resizely&#x27;, WP_Resizely_URL . &#x27;/vendor/resizely-client/build/jquery.resizely.min.js&#x27;, array( &#x27;jquery&#x27; ));
+
+    $options = (array) WP_Resizely_Functions::options();
+
+    $options[ &#x27;home_url&#x27; ] = home_url();
+
+    if( is_ssl() ) {
+      $options[ &#x27;is_ssl&#x27; ] = true;
+    }
+
+    // Localize Resize.ly client options
+    wp_localize_script( &#x27;wp-resizely&#x27;, &#x27;WP_Resizely&#x27;, $options );
+
+  }
+
+  /**
    * Adds &quot;Settings&quot; link to the plugin overview page
    *
    *
@@ -164,6 +207,8 @@ class WP_Resizely_Core {
   }
 
 }
+
+
     </pre>
 </div>
 

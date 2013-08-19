@@ -2,7 +2,7 @@
     "project": {
         "name": "WP-Resizely",
         "description": "WordPress client for Resize.ly",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "url": "https://github.com/UsabilityDynamics/wp-resizely",
         "logo": "http://a3d72a45d111006ec192-ec5b80a12b0b09b4d52373336afb4254.r80.cf1.rackcdn.com/usability-dynamics.png"
     },
@@ -21,7 +21,6 @@
                 "WP_Resizely_Core": 1
             },
             "fors": {
-                "WP_Resizely_Functions": 1,
                 "WP_Resizely_Core": 1
             },
             "namespaces": {}
@@ -84,14 +83,14 @@
         {
             "file": "core/class_core.php",
             "line": 14,
-            "description": "Constructor.",
+            "description": "Core constructor.",
             "author": "potanin@UD",
             "since": "0.1.0",
-            "class": "WP_Resizely_Functions"
+            "class": "WP_Resizely_Core"
         },
         {
             "file": "core/class_core.php",
-            "line": 31,
+            "line": 38,
             "description": "Administrative Menu.",
             "author": "potanin@UD",
             "since": "0.1.0",
@@ -99,7 +98,23 @@
         },
         {
             "file": "core/class_core.php",
-            "line": 58,
+            "line": 65,
+            "description": "Initialize Resize.ly client in footer",
+            "author": "potanin@UD",
+            "since": "0.1.0",
+            "class": "WP_Resizely_Core"
+        },
+        {
+            "file": "core/class_core.php",
+            "line": 76,
+            "description": "Enqueue Resize.ly client-side script(s)",
+            "author": "potanin@UD",
+            "since": "0.1.0",
+            "class": "WP_Resizely_Core"
+        },
+        {
+            "file": "core/class_core.php",
+            "line": 101,
             "description": "Adds \"Settings\" link to the plugin overview page",
             "author": "potanin@UD",
             "since": "0.1.0",
@@ -108,13 +123,6 @@
         {
             "file": "core/class_functions.php",
             "line": 13,
-            "description": "Constructor",
-            "author": "potanin@UD",
-            "class": "WP_Resizely_Functions"
-        },
-        {
-            "file": "core/class_functions.php",
-            "line": 21,
             "description": "Get options object.",
             "author": "potanin@UD",
             "return": {
@@ -124,7 +132,15 @@
         },
         {
             "file": "core/class_functions.php",
-            "line": 32,
+            "line": 44,
+            "description": "Administrative Menu.",
+            "author": "potanin@UD",
+            "since": "0.1.0",
+            "class": "WP_Resizely_Functions"
+        },
+        {
+            "file": "core/class_functions.php",
+            "line": 90,
             "description": "Activate Plugin.",
             "todo": [
                 "Does not seem to trigger. -potanin@UD"
@@ -134,7 +150,7 @@
         },
         {
             "file": "core/class_functions.php",
-            "line": 43,
+            "line": 101,
             "description": "Deactivate Plugin",
             "author": "potanin@UD",
             "class": "WP_Resizely_Functions"
@@ -174,32 +190,40 @@
             "line": " core/ui/wp-resizely.php:2"
         },
         {
-            "message": "Missing item type\nConstructor.",
+            "message": "Missing item type\nCore constructor.",
             "line": " core/class_core.php:14"
         },
         {
             "message": "Missing item type\nAdministrative Menu.",
-            "line": " core/class_core.php:31"
+            "line": " core/class_core.php:38"
+        },
+        {
+            "message": "Missing item type\nInitialize Resize.ly client in footer",
+            "line": " core/class_core.php:65"
+        },
+        {
+            "message": "Missing item type\nEnqueue Resize.ly client-side script(s)",
+            "line": " core/class_core.php:76"
         },
         {
             "message": "Missing item type\nAdds \"Settings\" link to the plugin overview page",
-            "line": " core/class_core.php:58"
-        },
-        {
-            "message": "Missing item type\nConstructor",
-            "line": " core/class_functions.php:13"
+            "line": " core/class_core.php:101"
         },
         {
             "message": "Missing item type\nGet options object.",
-            "line": " core/class_functions.php:21"
+            "line": " core/class_functions.php:13"
+        },
+        {
+            "message": "Missing item type\nAdministrative Menu.",
+            "line": " core/class_functions.php:44"
         },
         {
             "message": "Missing item type\nActivate Plugin.",
-            "line": " core/class_functions.php:32"
+            "line": " core/class_functions.php:90"
         },
         {
             "message": "Missing item type\nDeactivate Plugin",
-            "line": " core/class_functions.php:43"
+            "line": " core/class_functions.php:101"
         }
     ]
 }
