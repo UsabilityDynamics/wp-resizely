@@ -20,7 +20,7 @@ class WP_Resizely_Functions {
   static function options() {
     $options = json_decode( get_option( 'wp-resizely' ) );
 
-    foreach ( $options as $key => $option ) {
+    foreach ( (array) $options as $key => $option ) {
 
       // Convert booleans
       if( $option === 'true' ) {

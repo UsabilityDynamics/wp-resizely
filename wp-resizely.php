@@ -48,13 +48,13 @@ include_once WP_Resizely_Path . '/core/class_functions.php';
 include_once WP_Resizely_Path . '/core/class_core.php';
 
 // Register activation hook.
-register_activation_hook( __FILE__, array( WP_Resizely_Functions, 'activation' ));
+register_activation_hook( __FILE__, array( 'WP_Resizely_Functions', 'activation' ));
 
 // Register activation hook.
-register_deactivation_hook( __FILE__, array( WP_Resizely_Functions, 'deactivation' ));
+register_deactivation_hook( __FILE__, array( 'WP_Resizely_Functions', 'deactivation' ));
 
 // Initiate the plugin.
 add_action( 'plugins_loaded', create_function('', 'new WP_Resizely_Core;'));
 
 // Register Resize.ly shortcode.
-add_shortcode( 'resizely', array( WP_Resizely_Functions, 'shortcode' ) );
+add_shortcode( 'resizely', array( 'WP_Resizely_Functions', 'shortcode' ) );

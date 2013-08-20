@@ -27,7 +27,7 @@ class WP_Resizely_Core {
 
 
     // Enable resizely unless explicitly disabled.
-    if( $options->disable_resizely !== true ) {
+    if( $options && $options->disable_resizely !== true ) {
       add_action( 'wp_enqueue_scripts', array( __CLASS__, 'wp_enqueue_scripts' ));
       add_action( 'wp_footer', array( __CLASS__, 'wp_footer' ));
     }
