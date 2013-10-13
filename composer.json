@@ -1,0 +1,40 @@
+{
+  "name": "usabilitydynamics/wp-resizely",
+  "description": "Your images resized, responsive, and retina ready with all the magic happening in the cloud.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UsabilityDynamics/wp-resizely"
+  },
+  "homepage": "https://github.com/UsabilityDynamics/wp-resizely",
+  "keywords": [
+    "wordpress",
+    "resize.ly"
+  ],
+  "minimum-stability": "dev",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "Andy Potanin",
+      "homepage": "http://usabilitydynamics.com"
+    },
+    {
+      "name": "Reid Williams",
+      "homepage": "http://usabilitydynamics.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3",
+    "UsabilityDynamics/lib-utility": "*",
+    "UsabilityDynamics/lib-settings": "*",
+    "UsabilityDynamics/lib-ui": "*"
+  },
+  "autoload": {
+    "files": [
+      "lib/class-bootstrap.php",
+      "lib/class-core.php",
+      "lib/class-settings.php",
+      "lib/class-ui.php",
+      "lib/class-utility.php"
+    ]
+  }
+}
