@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2a2b53b67c9f1fc0eac9d17500ac83c8",
+    "hash": "a66cf6b1f3b11ae77efd4bafef3fe95a",
     "packages": [
         {
             "name": "justinrainbow/json-schema",
@@ -62,11 +62,11 @@
         },
         {
             "name": "usabilitydynamics/lib-settings",
-            "version": "dev-trunk",
+            "version": "dev-master",
             "source": {
-                "type": "svn",
+                "type": "git",
                 "url": "https://github.com/UsabilityDynamics/lib-settings",
-                "reference": "/trunk/@23"
+                "reference": "02c0b683c7388159a0c8ca1d2fc444f191c0b868"
             },
             "require": {
                 "usabilitydynamics/lib-utility": "*"
@@ -107,15 +107,15 @@
             "support": {
                 "issues": "https://github.com/usabilitydynamics/lib-settings/issues"
             },
-            "time": "2013-09-04 19:11:03"
+            "time": "2013-10-11 21:18:34"
         },
         {
             "name": "usabilitydynamics/lib-ui",
-            "version": "dev-trunk",
+            "version": "dev-master",
             "source": {
-                "type": "svn",
+                "type": "git",
                 "url": "https://github.com/UsabilityDynamics/lib-ui",
-                "reference": "/trunk/@16"
+                "reference": "ed02c7dd36c7464bb098817069e1c1b2ad5ce289"
             },
             "require": {
                 "usabilitydynamics/lib-utility": "*"
@@ -156,15 +156,15 @@
             "support": {
                 "issues": "https://github.com/usabilitydynamics/lib-ui/issues"
             },
-            "time": "2013-09-07 16:51:29"
+            "time": "2013-10-11 01:48:31"
         },
         {
             "name": "usabilitydynamics/lib-utility",
-            "version": "dev-trunk",
+            "version": "dev-master",
             "source": {
-                "type": "svn",
+                "type": "git",
                 "url": "https://github.com/UsabilityDynamics/lib-utility",
-                "reference": "/trunk/@31"
+                "reference": "27202cbc9a7452e9fb4b15ce92ccf2ee9411622d"
             },
             "require": {
                 "justinrainbow/json-schema": "1.1.*"
@@ -208,7 +208,44 @@
             "support": {
                 "issues": "https://github.com/usabilitydynamics/lib-utility/issues"
             },
-            "time": "2013-09-04 19:10:41"
+            "time": "2013-10-11 22:27:13"
+        },
+        {
+            "name": "usabilitydynamics/lib-wp-bootstrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UsabilityDynamics/lib-wp-bootstrap",
+                "reference": "e81f2ef871a5e581ad81cc7ff774d18a1747efb6"
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "UsabilityDynamics": "src/"
+                }
+            },
+            "license": [
+                "GPLv2"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Potanin",
+                    "homepage": "http://usabilitydynamics.com"
+                },
+                {
+                    "name": "Reid Williams",
+                    "homepage": "http://usabilitydynamics.com"
+                }
+            ],
+            "description": "Wordpress bootstrap library created by UsabilityDynamics",
+            "homepage": "https://github.com/UsabilityDynamics/lib-wp-bootstrap",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2013-10-14 00:26:11"
         }
     ],
     "packages-dev": [

@@ -5,6 +5,21 @@
     "type": "git",
     "url": "https://github.com/UsabilityDynamics/wp-resizely"
   },
+  "repositories": [ {
+    "type": "git",
+    "url": "https://github.com/UsabilityDynamics/lib-utility"
+  }, {
+    "type": "git",
+    "url": "https://github.com/UsabilityDynamics/lib-settings"
+  }, {
+    "type": "git",
+    "url": "https://github.com/UsabilityDynamics/lib-ui"
+  },
+    {
+      "type": "git",
+      "url": "https://github.com/UsabilityDynamics/lib-wp-bootstrap"
+    }
+  ],
   "homepage": "https://github.com/UsabilityDynamics/wp-resizely",
   "keywords": [
     "wordpress",
@@ -24,17 +39,14 @@
   ],
   "require": {
     "php": ">=5.3",
+    "UsabilityDynamics/lib-wp-bootstrap": "*",
     "UsabilityDynamics/lib-utility": "*",
     "UsabilityDynamics/lib-settings": "*",
     "UsabilityDynamics/lib-ui": "*"
   },
   "autoload": {
-    "files": [
-      "lib/class-bootstrap.php",
-      "lib/class-core.php",
-      "lib/class-settings.php",
-      "lib/class-ui.php",
-      "lib/class-utility.php"
-    ]
+    "psr-0": {
+      "UsabilityDynamics\\WP_Resizely": "src/"
+    }
   }
 }

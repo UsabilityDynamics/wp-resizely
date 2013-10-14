@@ -10,6 +10,7 @@ vendor
 .DS_Store
 .dynamic
 .Trashes
+._*
 *.sublime-project
 *.sublime-workspace
 
