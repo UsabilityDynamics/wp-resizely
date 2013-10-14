@@ -22,6 +22,11 @@
  *
  */
 
+/** If we have our local debugging file */
+if( file_exists( __DIR__ . '/localDebug.php' ) ){
+  require_once( __DIR__ . '/localDebug.php' );
+}
+
 /** Require our autoloader */
 require_once( __DIR__ . '/vendor/autoload.php' );
 

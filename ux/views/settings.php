@@ -19,6 +19,20 @@
             </label>
           </td>
         </tr>
+        <tr valign="top">
+          <th scope="row">
+            <?php _e( 'Use Resize.ly for all images', WP_Resizely_Locale ); ?>
+          </th>
+          <td>
+            <label for="rly_process_all_images">
+              <input id="rly_process_all_images" name="options[rly_process_all_images]" type="checkbox" value="true" <?php checked( true, $options->rly_process_all_images  ); ?> />
+              <?php _e( 'Yes, process all site images', WP_Resizely_Locale ); ?>
+            </label>
+            <p class="description">
+              <?php _e( 'This option will cause WP-Resizely to resize all images on a page, not just the ones set via the Media Library.', WP_Resizely_Locale ); ?>
+            </p>
+          </td>
+        </tr>
       </tbody>
     </table>
 

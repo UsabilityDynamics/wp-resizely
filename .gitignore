@@ -13,6 +13,7 @@ vendor
 ._*
 *.sublime-project
 *.sublime-workspace
+localDebug.php
 
 *.seed
 *.log
