@@ -519,7 +519,7 @@ namespace UsabilityDynamics\WP_Resizely{
      */
     function wp_enqueue_scripts() {
       /** Enqueue the script */
-      wp_enqueue_script( 'wp-resizely', WP_Resizely_URL . '/externals/resizely-client/src/jquery.resizely.js', array( 'jquery' ) );
+      wp_enqueue_script( 'wp-resizely', WP_Resizely_URL . '/vendor/usabilitydynamics/resizely-client/src/jquery.resizely.js', array( 'jquery' ) );
       /** Localize Resize.ly client options */
       wp_localize_script( 'wp-resizely', 'WP_Resizely', (array) $this->options );
     }

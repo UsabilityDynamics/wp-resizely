@@ -1,0 +1,52 @@
+{
+  "name": "resizely-client",
+  "version": "0.1.1",
+  "description": "Client for Resize.ly services.",
+  "keywords": [ "responsive" ],
+  "license": "MIT",
+  "copyright" : "Copyright (c) 2013 Usability Dynamics, Inc.",
+  "author": {
+    "name": "Usability Dynamics",
+    "email": "info@usabilitydynamics.com",
+    "url": "http://usabilitydynamics.com"
+  },
+  "contributors": [
+    {
+      "name": "Reid Williams",
+      "email": "reid.williams@usabilitydynamics.com",
+      "url": "http://usabilitydynamics.com"
+    },
+    {
+      "name": "Andy Potanin",
+      "email": "andy@usabilitydynamics.com",
+      "url": "http://usabilitydynamics.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UsabilityDynamics/resizely-client"
+  },
+  "directories": {
+    "doc": "./static/wiki",
+    "lib": "./lib",
+    "bin": "./bin"
+  },
+  "bin": "./bin/resizely-client.js",
+  "main": "./src/resizely-client.js",
+  "dependencies": {
+    "express": "*",
+    "component": "*",
+    "component-builder": "*",
+    "async": "*",
+    "auto": "*",
+    "commander": "*",
+    "extend": "*",
+    "debug": "*",
+    "object-emitter": "*",
+    "object-settings": "*"
+  },
+  "engines": {
+    "node": ">=0.6",
+    "npm": "1"
+  }
+}

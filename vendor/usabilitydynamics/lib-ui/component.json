@@ -1,0 +1,44 @@
+{
+  "name": "ui",
+  "version": "0.1.2",
+  "description": "Component for User Interfaces.",
+  "homepage": "http://github.com/UsabilityDynamics/lib-ui",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UsabilityDynamics/lib-ui"
+  },
+  "dependencies": {
+    "usabilitydynamics/lib-utility": "*"
+  },  
+  "templates": [],
+  "schemas": [
+    "schemas/ui.json"
+  ],
+  "lib": [
+    "lib/ui.php"
+  ],
+  "scripts": [
+    "scripts/ui.js"
+  ],
+  "authors": [
+    {
+      "name": "Andy Potanin",
+      "email": "andy.potanin@usabilitydynamics.com",
+      "homepage": "http://usabilitydynamics.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Maxim Peshkov",
+      "email": "maxim.peshkov@usabilitydynamics.com",
+      "homepage": "http://usabilitydynamics.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Anton Korotkov",
+      "email": "anton.korotkov@usabilitydynamics.com",
+      "homepage": "http://usabilitydynamics.com",
+      "role": "Developer"
+    }
+  ]
+}

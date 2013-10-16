@@ -1,0 +1,48 @@
+{
+  "name": "settings",
+  "version": "0.1.3",
+  "description": "Settings library settings.",
+  "homepage": "http://github.com/UsabilityDynamics/lib-settings",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UsabilityDynamics/lib-settings"
+  },
+  "dependencies": {
+    "usabilitydynamics/lib-utility": "*"
+  },
+  "views": [
+    "views/new-installation.xhtml",
+    "views/setup-assistant.xhtml",
+    "views/upgrade-splash.xhtml"
+  ],
+  "schemas": [
+    "schemas/settings.json"
+  ],
+  "lib": [
+    "lib/settings.php"
+  ],
+  "scripts": [
+    "scripts/settings.js"
+  ],
+  "authors": [
+    {
+      "name": "Andy Potanin",
+      "email": "andy.potanin@usabilitydynamics.com",
+      "homepage": "http://usabilitydynamics.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Maxim Peshkov",
+      "email": "maxim.peshkov@usabilitydynamics.com",
+      "homepage": "http://usabilitydynamics.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Anton Korotkov",
+      "email": "anton.korotkov@usabilitydynamics.com",
+      "homepage": "http://usabilitydynamics.com",
+      "role": "Developer"
+    }
+  ]
+}
