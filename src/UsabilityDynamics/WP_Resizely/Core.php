@@ -58,7 +58,9 @@ namespace UsabilityDynamics\WP_Resizely{
       'rly_base_domain' => 'resize.ly',
       'rly_disable' => false,
       'rly_process_all_images' => false,
-      'rly_debug' => false
+      'rly_debug' => false,
+      'rly_rerender' => false,
+      'rly_disable_thumbnails' => false
     );
 
     /**
@@ -229,6 +231,10 @@ namespace UsabilityDynamics\WP_Resizely{
      * Hook into the attachment metadata, so we can add the image sizes when required
      */
     function wp_get_attachment_metadata( $data, $id ){
+      /** If we haven't disabled thumbnails, bail */
+      if( !$this->options->rly_disable_thumbnails ){
+        return $data;
+      }
       $sizes = $this->get_image_sizes();
       $mime_type = get_post_mime_type( $id );
       /** If this is not an image, bail */
@@ -299,9 +305,10 @@ namespace UsabilityDynamics\WP_Resizely{
       $is_intermediate = false;
       $img_url_basename = wp_basename( $img_url );
       /** First, try to get it from meta if possible */
-      if( isset( $meta[ 'sizes' ][ $size ] ) ){
+      if( $this->options->rly_disable_thumbnails && is_array( $meta ) && isset( $meta[ 'sizes' ] ) && is_array( $meta[ 'sizes' ] ) && in_array( $size, $meta[ 'sizes' ] ) ){
         $width = $meta[ 'sizes' ][ $size ][ 'width' ];
         $height = $meta[ 'sizes' ][ $size ][ 'height' ];
+        $is_intermediate = true;
       }elseif( $intermediate = image_get_intermediate_size( $id, $size ) ){
         // try for a new style intermediate size
         $width = $intermediate[ 'width' ];
@@ -319,7 +326,7 @@ namespace UsabilityDynamics\WP_Resizely{
         // Added by williams@ud to change the path to be one that includes resize.ly
         $original_img_url =  $img_url;
         /** If we're on admin, we modify the URL */
-        if( is_admin() ){
+        if( is_admin() && $this->options->rly_disable_thumbnails ){
           $img_url = "//{$this->options->rly_base_domain}/{$width}x{$height}/{$img_url}";
         }
         return array( $img_url, $width, $height, $is_intermediate, $original_img_url );
@@ -389,7 +396,7 @@ namespace UsabilityDynamics\WP_Resizely{
         return false;
       }
       // if we're uploading an attachment, bail and return false so thumbs are not generated - williams@ud
-      if( isset( $_REQUEST[ 'action' ] ) && $_REQUEST[ 'action' ] == 'upload-attachment' ){
+      if( isset( $_REQUEST[ 'action' ] ) && $_REQUEST[ 'action' ] == 'upload-attachment' && $this->options->rly_disable_thumbnails ){
         return false;
       }
       // the return array matches the parameters to imagecopyresampled()
@@ -490,7 +497,10 @@ namespace UsabilityDynamics\WP_Resizely{
         if( typeof jQuery == 'function' ){
           jQuery( document ).ready( function( $ ){
             "use strict";
-            $( 'img.wp-resizely[ data-src ]' ).resizely( {
+            $( 'img.wp-resizely[ data-src ]' ).resizely( { <?php
+              if( $this->options->rly_rerender ){ ?>
+                fu: <?php echo $this->options->rly_rerender ? 'true' : 'false'; ?>, <?php
+              } ?>
               d: '<?php echo addcslashes( $this->options->rly_base_domain, "'" ); ?>',
               dbg: <?php echo $this->options->rly_debug ? 'true' : 'false'; ?>
             } );

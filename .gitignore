@@ -2,7 +2,6 @@ temp
 node_modules
 npm-debug.log
 wiki
-vendor
 
 .svn
 .idea

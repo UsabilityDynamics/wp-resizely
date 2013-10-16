@@ -21,6 +21,20 @@
         </tr>
         <tr valign="top">
           <th scope="row">
+            <?php _e( 'Disable Thumbnails', WP_Resizely_Locale ); ?>
+          </th>
+          <td>
+            <label for="rly_disable_thumbnails">
+              <input id="rly_disable_thumbnails" name="options[rly_disable_thumbnails]" type="checkbox" value="true" <?php checked( true, $options->rly_disable_thumbnails  ); ?> />
+              <?php _e( 'Yes, disable WordPress native thumbnail generation', WP_Resizely_Locale ); ?>
+            </label>
+            <p class="description">
+              <?php _e( 'Since Resize.ly handles thumbnail generation, you no longer need to have them stored on your server.', WP_Resizely_Locale ); ?>
+            </p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">
             <?php _e( 'Use Resize.ly for all images', WP_Resizely_Locale ); ?>
           </th>
           <td>
@@ -29,7 +43,24 @@
               <?php _e( 'Yes, process all site images', WP_Resizely_Locale ); ?>
             </label>
             <p class="description">
-              <?php _e( 'This option will cause WP-Resizely to resize all images on a page, not just the ones set via the Media Library.', WP_Resizely_Locale ); ?>
+              <?php _e( 'This option will cause WP-Resizely to resize all images on a page, not just the ones set via the Media Library and in post content.', WP_Resizely_Locale ); ?>
+            </p>
+          </td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">
+            <?php _e( 'Force Render', WP_Resizely_Locale ); ?>
+          </th>
+          <td>
+            <label for="rly_rerender">
+              <input id="rly_rerender" name="options[rly_rerender]" type="checkbox" value="true" <?php checked( true, $options->rly_rerender  ); ?> />
+              <?php _e( 'Yes, render the images on each request (don\'t use caching)', WP_Resizely_Locale ); ?>
+            </label>
+            <p class="description">
+              <?php _e( 'Forcing Resize.ly to re-render the images on each request ensures that you will always have the latest version of the image.', WP_Resizely_Locale ); ?>
+              <strong>
+                <?php _e( 'This is not recommended for a production system!', WP_Resizely_Locale ); ?>
+              </strong>
             </p>
           </td>
         </tr>
@@ -43,7 +74,7 @@
               <?php _e( 'Yes, put Resize.ly in debug mode', WP_Resizely_Locale ); ?>
             </label>
             <p class="description">
-              <?php _e( 'Debug mode shows quite a bit more information in the console.', WP_Resizely_Locale ); ?>
+              <?php _e( 'Debug mode shows quite a bit more information in the console on the front end.', WP_Resizely_Locale ); ?>
             </p>
           </td>
         </tr>

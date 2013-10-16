@@ -1,0 +1,254 @@
+[
+    {
+        "name": "justinrainbow/json-schema",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/justinrainbow/json-schema.git",
+            "reference": "05ff6d8d79fe3ad190b0663d80d3f9deee79416c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/05ff6d8d79fe3ad190b0663d80d3f9deee79416c",
+            "reference": "05ff6d8d79fe3ad190b0663d80d3f9deee79416c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2012-01-03 00:33:17",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "JsonSchema": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "NewBSD"
+        ],
+        "authors": [
+            {
+                "name": "Igor Wiedler",
+                "email": "igor@wiedler.ch",
+                "homepage": "http://wiedler.ch/igor/"
+            },
+            {
+                "name": "Bruno Prieto Reis",
+                "email": "bruno.p.reis@gmail.com"
+            },
+            {
+                "name": "Justin Rainbow",
+                "email": "justin.rainbow@gmail.com"
+            },
+            {
+                "name": "Robert Schönthal",
+                "email": "seroscho@googlemail.com",
+                "homepage": "http://digitalkaoz.net"
+            }
+        ],
+        "description": "A library to validate a json schema.",
+        "homepage": "https://github.com/justinrainbow/json-schema",
+        "keywords": [
+            "json",
+            "schema"
+        ]
+    },
+    {
+        "name": "usabilitydynamics/lib-utility",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/UsabilityDynamics/lib-utility",
+            "reference": "27202cbc9a7452e9fb4b15ce92ccf2ee9411622d"
+        },
+        "require": {
+            "justinrainbow/json-schema": "1.1.*"
+        },
+        "time": "2013-10-11 22:27:13",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "lib/utility.php",
+                "lib/loader.php"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andy Potanin",
+                "email": "andy.potanin@usabilitydynamics.com",
+                "homepage": "http://usabilitydynamics.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Maxim Peshkov",
+                "email": "maxim.peshkov@usabilitydynamics.com",
+                "homepage": "http://usabilitydynamics.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Anton Korotkov",
+                "email": "anton.korotkov@usabilitydynamics.com",
+                "homepage": "http://usabilitydynamics.com",
+                "role": "Developer"
+            }
+        ],
+        "homepage": "http://github.com/usabilitydynamics/lib-utility",
+        "keywords": [
+            "json-schema",
+            "require.js",
+            "utility"
+        ],
+        "support": {
+            "issues": "https://github.com/usabilitydynamics/lib-utility/issues"
+        }
+    },
+    {
+        "name": "usabilitydynamics/lib-ui",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/UsabilityDynamics/lib-ui",
+            "reference": "ed02c7dd36c7464bb098817069e1c1b2ad5ce289"
+        },
+        "require": {
+            "usabilitydynamics/lib-utility": "*"
+        },
+        "time": "2013-10-11 01:48:31",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "lib/ui.php"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andy Potanin",
+                "email": "andy.potanin@usabilitydynamics.com",
+                "homepage": "http://usabilitydynamics.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Maxim Peshkov",
+                "email": "maxim.peshkov@usabilitydynamics.com",
+                "homepage": "http://usabilitydynamics.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Anton Korotkov",
+                "email": "anton.korotkov@usabilitydynamics.com",
+                "homepage": "http://usabilitydynamics.com",
+                "role": "Developer"
+            }
+        ],
+        "homepage": "http://github.com/usabilitydynamics/lib-ui",
+        "keywords": [
+            "api"
+        ],
+        "support": {
+            "issues": "https://github.com/usabilitydynamics/lib-ui/issues"
+        }
+    },
+    {
+        "name": "usabilitydynamics/lib-settings",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/UsabilityDynamics/lib-settings",
+            "reference": "02c0b683c7388159a0c8ca1d2fc444f191c0b868"
+        },
+        "require": {
+            "usabilitydynamics/lib-utility": "*"
+        },
+        "time": "2013-10-11 21:18:34",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "lib/settings.php"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andy Potanin",
+                "email": "andy.potanin@usabilitydynamics.com",
+                "homepage": "http://usabilitydynamics.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Maxim Peshkov",
+                "email": "maxim.peshkov@usabilitydynamics.com",
+                "homepage": "http://usabilitydynamics.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Anton Korotkov",
+                "email": "anton.korotkov@usabilitydynamics.com",
+                "homepage": "http://usabilitydynamics.com",
+                "role": "Developer"
+            }
+        ],
+        "homepage": "http://github.com/usabilitydynamics/lib-settings",
+        "keywords": [
+            "settings"
+        ],
+        "support": {
+            "issues": "https://github.com/usabilitydynamics/lib-settings/issues"
+        }
+    },
+    {
+        "name": "usabilitydynamics/lib-wp-bootstrap",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/UsabilityDynamics/lib-wp-bootstrap",
+            "reference": "e81f2ef871a5e581ad81cc7ff774d18a1747efb6"
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "time": "2013-10-14 00:26:11",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "UsabilityDynamics": "src/"
+            }
+        },
+        "license": [
+            "GPLv2"
+        ],
+        "authors": [
+            {
+                "name": "Andy Potanin",
+                "homepage": "http://usabilitydynamics.com"
+            },
+            {
+                "name": "Reid Williams",
+                "homepage": "http://usabilitydynamics.com"
+            }
+        ],
+        "description": "Wordpress bootstrap library created by UsabilityDynamics",
+        "homepage": "https://github.com/UsabilityDynamics/lib-wp-bootstrap",
+        "keywords": [
+            "wordpress"
+        ]
+    }
+]
