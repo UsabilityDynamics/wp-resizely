@@ -1,0 +1,11 @@
+{
+  "name": "resizely-client",
+  "repo": "UsabilityDynamics/resizely-client",
+  "version": "1.0.1",
+  "description": "Client for Resize.ly services.",
+  "dependencies": {
+    "component/jquery": "*"
+  },
+  "main": "lib/jquery.resizely.js",
+  "license": "MIT"
+}
