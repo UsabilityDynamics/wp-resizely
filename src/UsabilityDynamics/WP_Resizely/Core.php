@@ -58,8 +58,7 @@ namespace UsabilityDynamics\WP_Resizely{
       'rly_base_domain' => 'resize.ly',
       'rly_disable' => false,
       'rly_process_all_images' => false,
-      'home_url' => false,
-      'is_ssl' => false
+      'rly_debug' => false
     );
 
     /**
@@ -96,11 +95,6 @@ namespace UsabilityDynamics\WP_Resizely{
           }
         }
       }
-      /** Add on some of our other options that we'll need */
-      $options->home_url = home_url();
-      if( is_ssl() ) {
-        $options->is_ssl = true;
-      }
       /** Assign the options */
       $this->options = $options;
 
@@ -119,12 +113,14 @@ namespace UsabilityDynamics\WP_Resizely{
         add_filter( 'wp_get_attachment_metadata', array( $this, 'wp_get_attachment_metadata' ), 10, 100 );
         /** We're intercepting the request for getting image sizes, which allows us to stop thumbnail generation */
         add_filter( 'image_resize_dimensions', array( $this, 'image_resize_dimensions' ), 1, 100 );
-        if( is_admin() ){
+        /** If we're on admin, or if we're resizing all images */
+        if( is_admin() || $this->options->rly_process_all_images ){
           /** We're going to intercept the request to send the image to the editor */
           add_filter( 'get_image_tag', array( $this, 'get_image_tag' ), 10, 100 );
           add_filter( 'get_image_tag_class', array( $this, 'get_image_tag_class' ), 10, 100 );
           add_filter( 'image_downsize', array( $this, 'image_downsize' ), 1, 100 );
-        }else{
+        }
+        if( !is_admin() ){
           /** Add our actions for inserting the scripts */
           add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
           add_action( 'wp_footer', array( $this, 'wp_footer' ) );
@@ -242,11 +238,23 @@ namespace UsabilityDynamics\WP_Resizely{
       /** Go through our sizes, and replace the data */
       $data[ 'sizes' ] = array();
       foreach( $sizes as $size => $dims ){
+        $new_dims = image_resize_dimensions( $data[ 'width' ], $data[ 'height' ], $dims[ 'width' ], $dims[ 'height' ], $dims[ 'crop' ] );
+        if( !$new_dims ){
+          /** Well, looks like the image can't be downsized */
+          $width = $data[ 'width' ];
+          $height = $data[ 'height' ];
+        }else{
+          /** Yay, we have a downsized width and height */
+          $width = $new_dims[ 4 ];
+          $height = $new_dims[ 5 ];
+        }
         $data[ 'sizes' ][ $size ] = array(
           'file' => wp_basename( $data[ 'file' ] ),
-          'width' => $dims[ 'width' ],
-          'height' => $dims[ 'height' ]
+          'width' => $width,
+          'height' => $height
         );
+        /** Unset the data for the next loop */
+        unset( $width, $height );
       }
       return $data;
     }
@@ -290,8 +298,12 @@ namespace UsabilityDynamics\WP_Resizely{
       $width = $height = 0;
       $is_intermediate = false;
       $img_url_basename = wp_basename( $img_url );
-      // try for a new style intermediate size
-      if( $intermediate = image_get_intermediate_size( $id, $size ) ){
+      /** First, try to get it from meta if possible */
+      if( isset( $meta[ 'sizes' ][ $size ] ) ){
+        $width = $meta[ 'sizes' ][ $size ][ 'width' ];
+        $height = $meta[ 'sizes' ][ $size ][ 'height' ];
+      }elseif( $intermediate = image_get_intermediate_size( $id, $size ) ){
+        // try for a new style intermediate size
         $width = $intermediate[ 'width' ];
         $height = $intermediate[ 'height' ];
         $is_intermediate = true;
@@ -306,7 +318,10 @@ namespace UsabilityDynamics\WP_Resizely{
         list( $width, $height ) = image_constrain_size_for_editor( $width, $height, $size );
         // Added by williams@ud to change the path to be one that includes resize.ly
         $original_img_url =  $img_url;
-        $img_url = "//{$this->options->rly_base_domain}/{$width}x{$height}/{$img_url}";
+        /** If we're on admin, we modify the URL */
+        if( is_admin() ){
+          $img_url = "//{$this->options->rly_base_domain}/{$width}x{$height}/{$img_url}";
+        }
         return array( $img_url, $width, $height, $is_intermediate, $original_img_url );
       }
       return false;
@@ -425,14 +440,16 @@ namespace UsabilityDynamics\WP_Resizely{
     function ob_callback( $buffer ){
       /** Lets put our HTML into a dom document */
       $doc = new \DOMDocument();
-      if( @$doc->loadHTML( $buffer ) ){
+      if( @$doc->loadHTML( mb_convert_encoding( $buffer, 'HTML-ENTITIES', 'UTF-8' ) ) ){
         /** Get our images */
         $imgs = $doc->getElementsByTagName( 'img' );
         foreach( $imgs as $img ){
           /** Get the attributes we need */
-          $classes = explode( ' ', $img->getAttribute( 'class' ) );
+          $classes = explode( ' ', (string) $img->getAttribute( 'class' ) );
           $data_src = $img->getAttribute( 'data-src' );
           $src = $img->getAttribute( 'src' );
+          $width = $img->getAttribute( 'width' );
+          $height = $img->getAttribute( 'height' );
           /** Now, make sure we have the resize.ly class */
           if( in_array( 'wp-resizely', $classes ) ){
             /** See if we have the data-src attribute */
@@ -440,18 +457,19 @@ namespace UsabilityDynamics\WP_Resizely{
               $img->removeAttribute( 'src' );
             }
           }elseif( $this->options->rly_process_all_images ){
-            /** Ok, so we're forcing this to occur, change the source to data-source, and add the class */
-            if( $src && !$data_src ){
-              $img->setAttribute( 'data-src', $src );
-            }
+            /** Set the data-src attribute */
+            $img->setAttribute( 'data-src', $src );
             $img->removeAttribute( 'src' );
-            if( is_array( $classes ) ){
-              $classes[] = 'wp-resizely';
-              $img->setAttribute( 'class', implode( ' ', $classes ) );
+            /** Add the resizely class */
+            $classes[] = 'wp-resizely';
+            $img->setAttribute( 'class', implode( ' ', $classes ) );
+            /** Now, set dataheight and datawidth if needed */
+            if( $width ){
+              $img->setAttribute( 'data-width', $width );
             }
-
-
-
+            if( $height ){
+              $img->setAttribute( 'data-height', $height );
+            }
           }
         }
         /** Ok, replace our buffer */
@@ -473,7 +491,8 @@ namespace UsabilityDynamics\WP_Resizely{
           jQuery( document ).ready( function( $ ){
             "use strict";
             $( 'img.wp-resizely[ data-src ]' ).resizely( {
-              d: '<?php echo addcslashes( $this->options->rly_base_domain, "'" ); ?>'
+              d: '<?php echo addcslashes( $this->options->rly_base_domain, "'" ); ?>',
+              dbg: <?php echo $this->options->rly_debug ? 'true' : 'false'; ?>
             } );
           } );
         }

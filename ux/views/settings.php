@@ -33,6 +33,20 @@
             </p>
           </td>
         </tr>
+        <tr valign="top">
+          <th scope="row">
+            <?php _e( 'Debug', WP_Resizely_Locale ); ?>
+          </th>
+          <td>
+            <label for="rly_debug">
+              <input id="rly_debug" name="options[rly_debug]" type="checkbox" value="true" <?php checked( true, $options->rly_debug  ); ?> />
+              <?php _e( 'Yes, put Resize.ly in debug mode', WP_Resizely_Locale ); ?>
+            </label>
+            <p class="description">
+              <?php _e( 'Debug mode shows quite a bit more information in the console.', WP_Resizely_Locale ); ?>
+            </p>
+          </td>
+        </tr>
       </tbody>
     </table>
 
