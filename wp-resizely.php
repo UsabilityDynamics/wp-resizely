@@ -1,15 +1,11 @@
 <?php
 /**
  * Plugin Name: WP-Resizely
- * Plugin URI: http://usabilitydynamics.com/products/wp-resizely/
+ * Plugin URI: https://resize.ly
  * Description: Dynamic image resizing.
  * Author: Usability Dynamics, Inc.
  * Version: 0.1.1
  * Author URI: http://usabilitydynamics.com
- *
- * Copyright 2013  Usability Dynamics, Inc.    (email : info@usabilitydynamics.com)
- *
- * Created by Usability Dynamics, Inc (website: usabilitydynamics.com       email : info@usabilitydynamics.com)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,35 +22,13 @@
  *
  */
 
-// Plugin Version
-define( 'WP_Resizely_Version', '0.1.1' );
+/** If we have our local debugging file */
+if( file_exists( __DIR__ . '/localDebug.php' ) ){
+  require_once( __DIR__ . '/localDebug.php' );
+}
 
-// Path for Includes
-define( 'WP_Resizely_Path', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
+/** Require our autoloader */
+require_once( __DIR__ . '/vendor/autoload.php' );
 
-// Clean directory name
-define( 'WP_Resizely_Directory', basename( __DIR__  ) );
-
-// Path for front-end links
-define( 'WP_Resizely_URL', untrailingslashit( plugins_url( basename( __DIR__  )) ) );
-
-// Locale Name
-define( 'WP_Resizely_Locale', WP_Resizely_Directory );
-
-/** Loads general functions used by WP-crm */
-include_once WP_Resizely_Path . '/core/class_functions.php';
-
-/** Loads all the metaboxes for the crm page */
-include_once WP_Resizely_Path . '/core/class_core.php';
-
-// Register activation hook.
-register_activation_hook( __FILE__, array( 'WP_Resizely_Functions', 'activation' ));
-
-// Register activation hook.
-register_deactivation_hook( __FILE__, array( 'WP_Resizely_Functions', 'deactivation' ));
-
-// Initiate the plugin.
-add_action( 'plugins_loaded', create_function('', 'new WP_Resizely_Core;'));
-
-// Register Resize.ly shortcode.
-add_shortcode( 'resizely', array( 'WP_Resizely_Functions', 'shortcode' ) );
+/** Init */
+new UsabilityDynamics\WP_Bootstrap( 'UsabilityDynamics\WP_Resizely\Core' );
