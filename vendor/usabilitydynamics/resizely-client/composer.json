@@ -1,0 +1,28 @@
+{
+  "name": "usabilitydynamics/resizely-client",
+  "description": "This is just a placeholder for now so we can use composer to bring in this front end library.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UsabilityDynamics/resizely-client"
+  },
+  "homepage": "https://github.com/UsabilityDynamics/resizely-client",
+  "keywords": [
+    "resize.ly"
+  ],
+  "minimum-stability": "dev",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "Andy Potanin",
+      "homepage": "http://usabilitydynamics.com"
+    },
+    {
+      "name": "Reid Williams",
+      "homepage": "http://usabilitydynamics.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+  }
+}

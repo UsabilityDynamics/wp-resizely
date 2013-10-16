@@ -6,17 +6,20 @@
     "url": "https://github.com/UsabilityDynamics/wp-resizely"
   },
   "repositories": [ {
-      "type": "git",
+      "type": "svn",
       "url": "https://github.com/UsabilityDynamics/lib-utility"
     }, {
-      "type": "git",
+      "type": "svn",
       "url": "https://github.com/UsabilityDynamics/lib-settings"
     }, {
-      "type": "git",
+      "type": "svn",
       "url": "https://github.com/UsabilityDynamics/lib-ui"
     }, {
-      "type": "git",
+      "type": "svn",
       "url": "https://github.com/UsabilityDynamics/lib-wp-bootstrap"
+  }, {
+    "type": "svn",
+    "url": "https://github.com/UsabilityDynamics/resizely-client"
   } ],
   "homepage": "https://github.com/UsabilityDynamics/wp-resizely",
   "keywords": [
@@ -40,7 +43,8 @@
     "UsabilityDynamics/lib-wp-bootstrap": "*",
     "UsabilityDynamics/lib-utility": "*",
     "UsabilityDynamics/lib-settings": "*",
-    "UsabilityDynamics/lib-ui": "*"
+    "UsabilityDynamics/lib-ui": "*",
+    "UsabilityDynamics/resizely-client": "*"
   },
   "autoload": {
     "psr-0": {

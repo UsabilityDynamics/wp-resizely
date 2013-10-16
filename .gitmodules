@@ -1,6 +1,0 @@
-[submodule "wiki"]
-	path = wiki
-	url = git@github.com:UsabilityDynamics/wp-resizely.wiki.git
-[submodule "externals/resizely-client"]
-	path = externals/resizely-client
-	url = git@github.com/UsabilityDynamics/resizely-client.git

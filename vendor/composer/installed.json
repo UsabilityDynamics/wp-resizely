@@ -1,5 +1,44 @@
 [
     {
+        "name": "usabilitydynamics/lib-wp-bootstrap",
+        "version": "dev-trunk",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "svn",
+            "url": "https://github.com/UsabilityDynamics/lib-wp-bootstrap",
+            "reference": "/trunk/@4"
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "time": "2013-10-13 17:17:16",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "UsabilityDynamics": "src/"
+            }
+        },
+        "license": [
+            "GPLv2"
+        ],
+        "authors": [
+            {
+                "name": "Andy Potanin",
+                "homepage": "http://usabilitydynamics.com"
+            },
+            {
+                "name": "Reid Williams",
+                "homepage": "http://usabilitydynamics.com"
+            }
+        ],
+        "description": "Wordpress bootstrap library created by UsabilityDynamics",
+        "homepage": "https://github.com/UsabilityDynamics/lib-wp-bootstrap",
+        "keywords": [
+            "wordpress"
+        ]
+    },
+    {
         "name": "justinrainbow/json-schema",
         "version": "1.1.0",
         "version_normalized": "1.1.0.0",
@@ -58,17 +97,17 @@
     },
     {
         "name": "usabilitydynamics/lib-utility",
-        "version": "dev-master",
+        "version": "dev-trunk",
         "version_normalized": "9999999-dev",
         "source": {
-            "type": "git",
+            "type": "svn",
             "url": "https://github.com/UsabilityDynamics/lib-utility",
-            "reference": "27202cbc9a7452e9fb4b15ce92ccf2ee9411622d"
+            "reference": "/trunk/@31"
         },
         "require": {
             "justinrainbow/json-schema": "1.1.*"
         },
-        "time": "2013-10-11 22:27:13",
+        "time": "2013-09-04 19:10:41",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -112,17 +151,17 @@
     },
     {
         "name": "usabilitydynamics/lib-ui",
-        "version": "dev-master",
+        "version": "dev-trunk",
         "version_normalized": "9999999-dev",
         "source": {
-            "type": "git",
+            "type": "svn",
             "url": "https://github.com/UsabilityDynamics/lib-ui",
-            "reference": "ed02c7dd36c7464bb098817069e1c1b2ad5ce289"
+            "reference": "/trunk/@16"
         },
         "require": {
             "usabilitydynamics/lib-utility": "*"
         },
-        "time": "2013-10-11 01:48:31",
+        "time": "2013-09-07 16:51:29",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -162,18 +201,49 @@
         }
     },
     {
-        "name": "usabilitydynamics/lib-settings",
-        "version": "dev-master",
+        "name": "usabilitydynamics/resizely-client",
+        "version": "dev-trunk",
         "version_normalized": "9999999-dev",
         "source": {
-            "type": "git",
+            "type": "svn",
+            "url": "https://github.com/UsabilityDynamics/resizely-client",
+            "reference": "/trunk/@21"
+        },
+        "time": "2013-08-12 01:30:48",
+        "type": "library",
+        "installation-source": "source",
+        "license": [
+            "GPLv2"
+        ],
+        "authors": [
+            {
+                "name": "Andy Potanin",
+                "homepage": "http://usabilitydynamics.com"
+            },
+            {
+                "name": "Reid Williams",
+                "homepage": "http://usabilitydynamics.com"
+            }
+        ],
+        "description": "This is just a placeholder for now so we can use composer to bring in this front end library.",
+        "homepage": "https://github.com/UsabilityDynamics/resizely-client",
+        "keywords": [
+            "resize.ly"
+        ]
+    },
+    {
+        "name": "usabilitydynamics/lib-settings",
+        "version": "dev-trunk",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "svn",
             "url": "https://github.com/UsabilityDynamics/lib-settings",
-            "reference": "02c0b683c7388159a0c8ca1d2fc444f191c0b868"
+            "reference": "/trunk/@23"
         },
         "require": {
             "usabilitydynamics/lib-utility": "*"
         },
-        "time": "2013-10-11 21:18:34",
+        "time": "2013-09-04 19:11:03",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -211,44 +281,5 @@
         "support": {
             "issues": "https://github.com/usabilitydynamics/lib-settings/issues"
         }
-    },
-    {
-        "name": "usabilitydynamics/lib-wp-bootstrap",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/UsabilityDynamics/lib-wp-bootstrap",
-            "reference": "e81f2ef871a5e581ad81cc7ff774d18a1747efb6"
-        },
-        "require": {
-            "php": ">=5.3"
-        },
-        "time": "2013-10-14 00:26:11",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "UsabilityDynamics": "src/"
-            }
-        },
-        "license": [
-            "GPLv2"
-        ],
-        "authors": [
-            {
-                "name": "Andy Potanin",
-                "homepage": "http://usabilitydynamics.com"
-            },
-            {
-                "name": "Reid Williams",
-                "homepage": "http://usabilitydynamics.com"
-            }
-        ],
-        "description": "Wordpress bootstrap library created by UsabilityDynamics",
-        "homepage": "https://github.com/UsabilityDynamics/lib-wp-bootstrap",
-        "keywords": [
-            "wordpress"
-        ]
     }
 ]

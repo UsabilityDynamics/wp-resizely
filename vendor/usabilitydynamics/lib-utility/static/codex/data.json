@@ -1,0 +1,1329 @@
+{
+    "project": {
+        "name": "{{name}}",
+        "description": "{{description}}",
+        "version": "0.0.1",
+        "url": "https://github.com/UsabilityDynamics/{{name}}/",
+        "logo": "http://a3d72a45d111006ec192-ec5b80a12b0b09b4d52373336afb4254.r80.cf1.rackcdn.com/usability-dynamics.png"
+    },
+    "files": {
+        "scripts/utility.js": {
+            "name": "scripts/utility.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "scripts/utility.php": {
+            "name": "scripts/utility.php",
+            "modules": {
+                "UsabilityDynamics": 1,
+                "Utility": 1
+            },
+            "classes": {
+                "Utility": 1
+            },
+            "fors": {
+                "Utility": 1
+            },
+            "namespaces": {
+                "UsabilityDynamics": 1
+            }
+        }
+    },
+    "modules": {
+        "UsabilityDynamics": {
+            "name": "UsabilityDynamics",
+            "submodules": {
+                "Utility": 1
+            },
+            "classes": {
+                "Utility": 1
+            },
+            "fors": {
+                "Utility": 1
+            },
+            "namespaces": {},
+            "tag": "module",
+            "file": "scripts/utility.php",
+            "line": 14,
+            "description": "Utility Classs",
+            "copyright": "Copyright (c) 2010 - 2013, Usability Dynamics, Inc.",
+            "author": "team@UD",
+            "version": "0.2.1"
+        },
+        "Utility": {
+            "name": "Utility",
+            "submodules": {},
+            "classes": {
+                "Utility": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {},
+            "module": "UsabilityDynamics",
+            "namespace": "",
+            "file": "scripts/utility.php",
+            "line": 14,
+            "description": "Utility Library.",
+            "version": "0.2.1"
+        }
+    },
+    "classes": {
+        "Utility": {
+            "name": "Utility",
+            "shortname": "Utility",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "UsabilityDynamics",
+            "submodule": "Utility",
+            "namespace": "",
+            "file": "scripts/utility.php",
+            "line": 14,
+            "description": "Utility Library.",
+            "version": "0.2.1"
+        }
+    },
+    "classitems": [
+        {
+            "file": "scripts/utility.js",
+            "line": 1,
+            "description": "UD Utility",
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 26,
+            "description": "Default salt for encryption",
+            "itemtype": "property",
+            "name": "default_salt",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 33,
+            "description": "Constructor for initializing class, in static mode as well as dynamic.",
+            "todo": [
+                "Should make the transdomain configuraiton."
+            ],
+            "since": "0.1.1",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 45,
+            "description": "Return array of active plugins for current instance\n\nImprovement over wp_get_active_and_valid_plugins() which doesn't return any plugins when in MS",
+            "itemtype": "method",
+            "name": "get_active_plugins",
+            "since": "0.2.0",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 69,
+            "description": "Validate URL",
+            "since": "0.1.1",
+            "params": [
+                {
+                    "name": "string",
+                    "description": "$url"
+                }
+            ],
+            "return": {
+                "description": "bool"
+            },
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 83,
+            "description": "Standard Instance",
+            "since": "1.1",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 102,
+            "description": "Strip out protected keys from an associative array.\n\nExample below will remove all keys from array that being with $$:\n\n<code>\nstrip_protected_keys( $my_array, array( 'prefix' => '$$' ) );\n</code>",
+            "since": "2.0",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 137,
+            "description": "Parse standard WordPress readme file",
+            "source": "Readme Parser ( http://www.tomsdimension.de/wp-plugins/readme-parser )",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 215,
+            "description": "Detects type.",
+            "source": "http://php.net/manual/en/function.gettype.php",
+            "since": "1.0.4",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 234,
+            "description": "Recursively remove empty values from array.",
+            "version": "1.0.1",
+            "since": "1.0.3",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 261,
+            "description": "Determines if a passed timestamp is newer than a requirement.\n\nUsage: UD_API::is_fresher_than( $timestamp, '5 minutes' );",
+            "since": "1.0.3",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 272,
+            "description": "Starts a timer for the passed string.",
+            "since": "1.0.2",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 284,
+            "description": "Stop a timer.",
+            "since": "1.0.2",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 296,
+            "description": "Start Profiling, can also double as timer.\n\nProfiling will only start if another profiling process is not already running.\nXHProf is required, other profilers may be added later.",
+            "updated": "1.0.4",
+            "since": "1.0.2",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 323,
+            "description": "Stop Profiling.",
+            "since": "1.0.2",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 348,
+            "description": "Attempt to download a remote files attachments",
+            "params": [
+                {
+                    "name": "bool",
+                    "description": "$images"
+                },
+                {
+                    "name": "array",
+                    "description": "$args"
+                }
+            ],
+            "return": {
+                "description": "bool|object"
+            },
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 372,
+            "description": "Regular Image Download.",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 498,
+            "description": "Checks if images exist and returns images dimensions",
+            "params": [
+                {
+                    "name": "mixed",
+                    "description": "$images Image url"
+                },
+                {
+                    "name": "mixed",
+                    "description": "$args"
+                }
+            ],
+            "return": {
+                "description": "array"
+            },
+            "author": "peshkov@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 558,
+            "description": "Return useful information about the current server.",
+            "since": "1.0.3",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 599,
+            "description": "Converts slashes for Windows paths.",
+            "since": "1.0.0",
+            "source": "Flawless",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 610,
+            "description": "Applies trim() function to all values in an array",
+            "source": "WP-Property",
+            "since": "0.6.0",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 631,
+            "description": "Returns all available image sizes",
+            "itemtype": "method",
+            "name": "all_image_sizes",
+            "return": {
+                "description": "array keys: 'width' and 'height'"
+            },
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 668,
+            "description": "Returns Image link (url)\n\nIf image with the current size doesn't exist, we try to generate it.\nIf image cannot be resized, the URL to the main image (original) is returned.",
+            "todo": [
+                "Add something to check if requested image size is bigger than the original",
+                "in which case cannot be \"resized\"",
+                "Add a check to see if the specified image dimensions have changed. Right now only checks if slug exists",
+                "not the actualy size."
+            ],
+            "params": [
+                {
+                    "name": "bool",
+                    "description": "$attachment_id"
+                },
+                {
+                    "name": "bool",
+                    "description": "$size"
+                },
+                {
+                    "name": "array",
+                    "description": "$args"
+                }
+            ],
+            "return": {
+                "description": "array|bool|mixed"
+            },
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 760,
+            "description": "Insert array into an associative array before a specific key",
+            "source": "http://stackoverflow.com/questions/6501845/php-need-help-inserting-arrays-into-associative-arrays-at-given-keys",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 778,
+            "description": "Insert array into an associative array after a specific key",
+            "source": "http://stackoverflow.com/questions/6501845/php-need-help-inserting-arrays-into-associative-arrays-at-given-keys",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 796,
+            "description": "Attemp to convert a plural US word into a singular.",
+            "todo": [
+                "API Service Candidate since we ideally need a dictionary reference."
+            ],
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 821,
+            "description": "Convert bytes into the logical unit of measure based on size.",
+            "source": "Flawless",
+            "since": "1.0.0",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 834,
+            "description": "Used to enable/disable/print SQL log\n\nUsage:\nself::sql_log( 'enable' );\nself::sql_log( 'disable' );\n$queries= self::sql_log( 'print_log' );",
+            "since": "0.1.0",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 872,
+            "description": "Return data for UD Log",
+            "updated": "1.04",
+            "sincde": "1.03",
+            "note": "This is a proof of concept, in future it should be able to support AJAX calls so can be displayed via Dynamic Filter.",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 922,
+            "description": "Return data for UD Log",
+            "note": "This is a proof of concept, in future it should be able to support AJAX calls so can be displayed via Dynamic Filter.",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 988,
+            "description": "Removes data from Logs table",
+            "params": [
+                {
+                    "name": "mixed",
+                    "description": "$args"
+                }
+            ],
+            "author": "peshkov@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1016,
+            "description": "Add an entry to the plugin-specifig log.\n\nCreates log if one does not exist.\n\n<code>\nUD\\Utility::log( \"Settings updated.\" );\n</code>",
+            "deprecated": true,
+            "deprecationMessage": "peshkov@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1086,
+            "description": "Helpder function for figuring out if another specific function is a predecesor of current function.",
+            "since": "1.0.0",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1102,
+            "description": "Helpder function for figuring out if a specific file is a predecesor of current file.",
+            "since": "1.0.0",
+            "author": "potanin@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1118,
+            "description": "Fixed serialized arrays which sometimes get messed up in WordPress",
+            "source": "http://shauninman.com/archive/2008/01/08/recovering_truncated_php_serialized_arrays",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1129,
+            "description": "The recursive function that does all of the heavy lifing. Do not call directly.",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1211,
+            "description": "Determine if an item is in array and return checked",
+            "since": "0.5.0",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1224,
+            "description": "Check if the current WP version is older then given parameter $version.",
+            "params": [
+                {
+                    "name": "string",
+                    "description": "$version"
+                }
+            ],
+            "return": {
+                "description": "bool"
+            },
+            "since": "1.0.0",
+            "author": "peshkov@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1236,
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1243,
+            "description": "Determine if any requested template exists and return path to it.\n\n== Usage ==\nThe function will search through: STYLESHEETPATH, TEMPLATEPATH, and any custom paths you pass as second argument.\n\n$best_template = UD\\Utility::get_template_part( array(\n  'template-ideal-match',\n  'template-default',\n), array( PATH_TO_MY_TEMPLATES );\n\nNote: load_template() extracts $wp_query->query_vars into the loaded template, so to add any global variables to the template, add them to\n$wp_query->query_vars prior to calling this function.",
+            "name": "array $name List of requested templates. Will be return the first found",
+            "path": "array $path [optional]. Method tries to find template in theme, but also it can be found in given list of pathes.",
+            "load": "boolean [optional]. If true and a template is found, the template will be loaded via load_template() and returned as a string",
+            "author": "peshkov@UD",
+            "version": "1.0",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1313,
+            "description": "Determine if any requested template exists and return path to it.\n\nMigrated from ud_api.php.. - potanin@UD",
+            "todo": [
+                "Merge with x_get_template_part() to support $slug and $name",
+                "as well as $path."
+            ],
+            "name": "array $name List of requested templates. Will be return the first found",
+            "path": "array $path [optional]. Method tries to find template in theme, but also it can be found in given list of pathes.",
+            "author": "peshkov@UD",
+            "version": "1.0",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1329,
+            "description": "Set default instance.\nTemplate can depend on instance. For example: facebook, PDF, etc.",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1360,
+            "description": "The goal of function is going through specific filters and return (or print) classes.\nThis function should not be called directly.\nEvery ud plugin/theme should have own short function ( wrapper ) for calling it. E.g., see: wpp_css().\nSo, use it in template as: <div id=\"my_element\" class=\"<?php wpp_css(\"{name_of_template}::my_element\"); ?>\"> </div>\n\nArguments:\n - instance [string] - UD plugin|theme's slug. E.g.: wpp, denali, wpi, etc\n - element [string] - specific element in template which will use the current classes.\n   Element should be called as {template}::{specific_name_of_element}. Where {template} is name of template,\n   where current classes will be used. This standart is optional. You can set any element's name if you want.\n - classes [array] - set of classes which will be used for element.\n - return [boolean] - If false, the function prints all classes like 'class1 class2 class3'",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "$args"
+                }
+            ],
+            "return": {
+                "description": "string"
+            },
+            "author": "peshkov@UD",
+            "version": "0.1",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1417,
+            "description": "Return simple array of column tables in a table",
+            "version": "0.6",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1440,
+            "description": "Port of jQuery.extend() function.",
+            "since": "1.0.3",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1471,
+            "description": "Returns a URL to a post object based on passed variable.\n\nIf its a number, then assumes its the id, If it resembles a slug, then get the first slug match.",
+            "since": "1.0",
+            "params": [
+                {
+                    "name": "bool|string",
+                    "description": "$title A page title, although ID integer can be passed as well"
+                }
+            ],
+            "return": {
+                "description": "string The page's URL if found, otherwise the general blog URL"
+            },
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1496,
+            "description": "Used to get the current plugin's log created via UD class\n\nIf no log exists, it creates one, and then returns it in chronological order.\n\nExample to view log:\n<code>\nprint_r( self::get_log() );\n</code>\n\n$param string Event description",
+            "deprecated": true,
+            "deprecationMessage": "peshkov@UD",
+            "uses": [
+                "get_option()",
+                "update_option()"
+            ],
+            "return": {
+                "description": "array Using the get_option function returns the contents of the log."
+            },
+            "params": [
+                {
+                    "name": "bool",
+                    "description": "$args"
+                }
+            ],
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1542,
+            "description": "Delete UD log for this plugin.",
+            "uses": [
+                "update_option()"
+            ],
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1560,
+            "description": "Creates Admin Menu page for UD Log",
+            "todo": [
+                "Need to make sure this will work if multiple plugins utilize the UD classes"
+            ],
+            "see": [
+                "function show_log_page"
+            ],
+            "since": "1.0",
+            "uses": [
+                "add_action() Calls 'admin_menu' hook with an anonymous ( lambda-style ) function which uses add_menu_page to create a UI Log page"
+            ],
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1580,
+            "description": "Displays the UD UI log page.",
+            "todo": [
+                "Add button or link to delete log",
+                "Add nonce to clear_log functions",
+                "Should be refactored to implement adding LOG tabs for different instances (wpp",
+                "wpi",
+                "wp-crm). peshkov@UD"
+            ],
+            "since": "1.0.0",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1631,
+            "description": "Replace in $str all entries of keys of the given $values\nwhere each key will be rounded by $brackets['left'] and $brackets['right']\nwith the relevant values of the $values",
+            "params": [
+                {
+                    "name": "string|array",
+                    "description": "$str"
+                },
+                {
+                    "name": "array",
+                    "description": "$values"
+                },
+                {
+                    "name": "array",
+                    "description": "$brackets"
+                }
+            ],
+            "return": {
+                "description": "string|array"
+            },
+            "author": "odokienko@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1651,
+            "description": "Wrapper function to send notification with WP-CRM or without one",
+            "params": [
+                {
+                    "name": "array|mixed",
+                    "description": "$args ['message']          using in email notification"
+                }
+            ],
+            "uses": [
+                "self::replace_data()",
+                "wp_crm_send_notification()"
+            ],
+            "return": {
+                "description": "boolean false if notification was not sent successfully"
+            },
+            "autor": "odokienko@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1710,
+            "description": "Turns a passed string into a URL slug\n\nArgument 'check_existance' will make the function check if the slug is used by a WordPress post",
+            "params": [
+                {
+                    "name": "string",
+                    "description": "$content"
+                },
+                {
+                    "name": "bool|string",
+                    "description": "$args Optional list of arguments to overwrite the defaults."
+                }
+            ],
+            "since": "1.0",
+            "uses": [
+                "add_action() Calls 'admin_menu' hook with an anonymous (lambda-style) function which uses add_menu_page to create a UI Log page"
+            ],
+            "return": {
+                "description": "string"
+            },
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1740,
+            "description": "Convert a slug to a more readable string",
+            "since": "1.3",
+            "params": [
+                {
+                    "name": "$string",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "string"
+            },
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1753,
+            "description": "Returns current url",
+            "params": [
+                {
+                    "name": "mixed",
+                    "description": "$args GET args which should be added to url"
+                },
+                {
+                    "name": "mixed",
+                    "description": "$except_args GET args which will be removed from URL if they exist"
+                }
+            ],
+            "return": {
+                "description": "string"
+            },
+            "author": "peshkov@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1783,
+            "description": "Prepares data for SQL query.\n\ni.e. It should be used when $pwdb->prepare cannot be used.\nFor example:\nwe have situation when SQL query could not be prepared by default $wpdb->prepare:\n$titles = array( \"John's appartment\", \" '; DELETE FROM $wpdb->posts;# \" );\n$wpdb->query( \"SELECT ID FROM $wpdb->posts WHERE post_title IN ( '\" . implode (\"','\", UD_Utility::prepare_to_sql( $titles ) ) . \"' ) \" );",
+            "global": "type $wpdb",
+            "params": [
+                {
+                    "name": "mixed",
+                    "description": "$args data which should be prepared for SQL query"
+                }
+            ],
+            "return": {
+                "description": "mixed prepared data"
+            },
+            "author": "peshkov@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1818,
+            "description": "Returns date and/or time using the WordPress date or time format, as configured.",
+            "params": [
+                {
+                    "name": "bool|string",
+                    "description": "$time Date or time to use for calculation."
+                },
+                {
+                    "name": "bool|string",
+                    "description": "$args List of arguments to overwrite the defaults."
+                }
+            ],
+            "uses": [
+                "wp_parse_args()",
+                "get_option()"
+            ],
+            "return": {
+                "description": "string|bool Returns formatted date or time, or false if no time passed."
+            },
+            "updated": "3.0",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1855,
+            "description": "This function is for the encryption of data",
+            "source": "http://php.net/manual/en/function.base64-encode.php",
+            "author": "williams@ud",
+            "params": [
+                {
+                    "name": "mixed",
+                    "description": "$pt Object or plain text string"
+                },
+                {
+                    "name": "bool|string",
+                    "description": "$salt The salt to use"
+                }
+            ],
+            "return": {
+                "description": "mixed"
+            },
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1877,
+            "description": "This function decrypts data",
+            "source": "http://php.net/manual/en/function.base64-encode.php",
+            "author": "williams@ud",
+            "params": [
+                {
+                    "name": "mixed",
+                    "description": "$ct Ciphertext"
+                },
+                {
+                    "name": "bool|string",
+                    "description": "$salt The salt to use"
+                }
+            ],
+            "return": {
+                "description": "string"
+            },
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1903,
+            "description": "Returns array of full pathes of files or directories which we try to find.",
+            "params": [
+                {
+                    "name": "mixed",
+                    "description": "$needle  Directory(ies) or file(s) which we want to find"
+                },
+                {
+                    "name": "string",
+                    "description": "$path The path where we try to find it"
+                },
+                {
+                    "name": "boolean",
+                    "description": "$_is_dir We're finding dir or file. Default is file."
+                }
+            ],
+            "return": {
+                "description": "array"
+            },
+            "author": "peshkov@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        },
+        {
+            "file": "scripts/utility.php",
+            "line": 1940,
+            "description": "Gets complicated html entity e.g. Table and ou|ol\nand removes whitespace characters include new line.\nwe should to do this before use nl2br",
+            "author": "odokienko@UD",
+            "class": "Utility",
+            "module": "UsabilityDynamics",
+            "submodule": "Utility"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " scripts/utility.js:1"
+        },
+        {
+            "message": "unknown tag: copyright",
+            "line": " scripts/utility.php:2"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " scripts/utility.php:2"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " scripts/utility.php:14"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:137"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:215"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " scripts/utility.php:234"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " scripts/utility.php:296"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:599"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:610"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " scripts/utility.php:631"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:760"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:778"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:821"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " scripts/utility.php:872"
+        },
+        {
+            "message": "unknown tag: sincde",
+            "line": " scripts/utility.php:872"
+        },
+        {
+            "message": "unknown tag: note",
+            "line": " scripts/utility.php:872"
+        },
+        {
+            "message": "unknown tag: note",
+            "line": " scripts/utility.php:922"
+        },
+        {
+            "message": "replacing incorrect tag: depreciated with deprecated",
+            "line": " scripts/utility.php:1016"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:1118"
+        },
+        {
+            "message": "unknown tag: name",
+            "line": " scripts/utility.php:1243"
+        },
+        {
+            "message": "unknown tag: path",
+            "line": " scripts/utility.php:1243"
+        },
+        {
+            "message": "unknown tag: load",
+            "line": " scripts/utility.php:1243"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " scripts/utility.php:1243"
+        },
+        {
+            "message": "unknown tag: name",
+            "line": " scripts/utility.php:1313"
+        },
+        {
+            "message": "unknown tag: path",
+            "line": " scripts/utility.php:1313"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " scripts/utility.php:1313"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " scripts/utility.php:1360"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " scripts/utility.php:1417"
+        },
+        {
+            "message": "replacing incorrect tag: depreciated with deprecated",
+            "line": " scripts/utility.php:1496"
+        },
+        {
+            "message": "unknown tag: autor",
+            "line": " scripts/utility.php:1651"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " scripts/utility.php:1818"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:1855"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:1855"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:1877"
+        },
+        {
+            "message": "unknown tag: source",
+            "line": " scripts/utility.php:1877"
+        },
+        {
+            "message": "Missing item type\nUD Utility",
+            "line": " scripts/utility.js:1"
+        },
+        {
+            "message": "Missing item type\nConstructor for initializing class, in static mode as well as dynamic.",
+            "line": " scripts/utility.php:33"
+        },
+        {
+            "message": "Missing item type\nValidate URL",
+            "line": " scripts/utility.php:69"
+        },
+        {
+            "message": "Missing item type\nStandard Instance",
+            "line": " scripts/utility.php:83"
+        },
+        {
+            "message": "Missing item type\nStrip out protected keys from an associative array.\n\nExample below will remove all keys from array that being with $$:\n\n<code>\nstrip_protected_keys( $my_array, array( 'prefix' => '$$' ) );\n</code>",
+            "line": " scripts/utility.php:102"
+        },
+        {
+            "message": "Missing item type\nParse standard WordPress readme file",
+            "line": " scripts/utility.php:137"
+        },
+        {
+            "message": "Missing item type\nDetects type.",
+            "line": " scripts/utility.php:215"
+        },
+        {
+            "message": "Missing item type\nRecursively remove empty values from array.",
+            "line": " scripts/utility.php:234"
+        },
+        {
+            "message": "Missing item type\nDetermines if a passed timestamp is newer than a requirement.\n\nUsage: UD_API::is_fresher_than( $timestamp, '5 minutes' );",
+            "line": " scripts/utility.php:261"
+        },
+        {
+            "message": "Missing item type\nStarts a timer for the passed string.",
+            "line": " scripts/utility.php:272"
+        },
+        {
+            "message": "Missing item type\nStop a timer.",
+            "line": " scripts/utility.php:284"
+        },
+        {
+            "message": "Missing item type\nStart Profiling, can also double as timer.\n\nProfiling will only start if another profiling process is not already running.\nXHProf is required, other profilers may be added later.",
+            "line": " scripts/utility.php:296"
+        },
+        {
+            "message": "Missing item type\nStop Profiling.",
+            "line": " scripts/utility.php:323"
+        },
+        {
+            "message": "Missing item type\nAttempt to download a remote files attachments",
+            "line": " scripts/utility.php:348"
+        },
+        {
+            "message": "Missing item type\nRegular Image Download.",
+            "line": " scripts/utility.php:372"
+        },
+        {
+            "message": "Missing item type\nChecks if images exist and returns images dimensions",
+            "line": " scripts/utility.php:498"
+        },
+        {
+            "message": "Missing item type\nReturn useful information about the current server.",
+            "line": " scripts/utility.php:558"
+        },
+        {
+            "message": "Missing item type\nConverts slashes for Windows paths.",
+            "line": " scripts/utility.php:599"
+        },
+        {
+            "message": "Missing item type\nApplies trim() function to all values in an array",
+            "line": " scripts/utility.php:610"
+        },
+        {
+            "message": "Missing item type\nReturns Image link (url)\n\nIf image with the current size doesn't exist, we try to generate it.\nIf image cannot be resized, the URL to the main image (original) is returned.",
+            "line": " scripts/utility.php:668"
+        },
+        {
+            "message": "Missing item type\nInsert array into an associative array before a specific key",
+            "line": " scripts/utility.php:760"
+        },
+        {
+            "message": "Missing item type\nInsert array into an associative array after a specific key",
+            "line": " scripts/utility.php:778"
+        },
+        {
+            "message": "Missing item type\nAttemp to convert a plural US word into a singular.",
+            "line": " scripts/utility.php:796"
+        },
+        {
+            "message": "Missing item type\nConvert bytes into the logical unit of measure based on size.",
+            "line": " scripts/utility.php:821"
+        },
+        {
+            "message": "Missing item type\nUsed to enable/disable/print SQL log\n\nUsage:\nself::sql_log( 'enable' );\nself::sql_log( 'disable' );\n$queries= self::sql_log( 'print_log' );",
+            "line": " scripts/utility.php:834"
+        },
+        {
+            "message": "Missing item type\nReturn data for UD Log",
+            "line": " scripts/utility.php:872"
+        },
+        {
+            "message": "Missing item type\nReturn data for UD Log",
+            "line": " scripts/utility.php:922"
+        },
+        {
+            "message": "Missing item type\nRemoves data from Logs table",
+            "line": " scripts/utility.php:988"
+        },
+        {
+            "message": "Missing item type\nAdd an entry to the plugin-specifig log.\n\nCreates log if one does not exist.\n\n<code>\nUD\\Utility::log( \"Settings updated.\" );\n</code>",
+            "line": " scripts/utility.php:1016"
+        },
+        {
+            "message": "Missing item type\nHelpder function for figuring out if another specific function is a predecesor of current function.",
+            "line": " scripts/utility.php:1086"
+        },
+        {
+            "message": "Missing item type\nHelpder function for figuring out if a specific file is a predecesor of current file.",
+            "line": " scripts/utility.php:1102"
+        },
+        {
+            "message": "Missing item type\nFixed serialized arrays which sometimes get messed up in WordPress",
+            "line": " scripts/utility.php:1118"
+        },
+        {
+            "message": "Missing item type\nThe recursive function that does all of the heavy lifing. Do not call directly.",
+            "line": " scripts/utility.php:1129"
+        },
+        {
+            "message": "Missing item type\nDetermine if an item is in array and return checked",
+            "line": " scripts/utility.php:1211"
+        },
+        {
+            "message": "Missing item type\nCheck if the current WP version is older then given parameter $version.",
+            "line": " scripts/utility.php:1224"
+        },
+        {
+            "message": "Missing item type",
+            "line": " scripts/utility.php:1236"
+        },
+        {
+            "message": "Missing item type\nDetermine if any requested template exists and return path to it.\n\n== Usage ==\nThe function will search through: STYLESHEETPATH, TEMPLATEPATH, and any custom paths you pass as second argument.\n\n$best_template = UD\\Utility::get_template_part( array(\n  'template-ideal-match',\n  'template-default',\n), array( PATH_TO_MY_TEMPLATES );\n\nNote: load_template() extracts $wp_query->query_vars into the loaded template, so to add any global variables to the template, add them to\n$wp_query->query_vars prior to calling this function.",
+            "line": " scripts/utility.php:1243"
+        },
+        {
+            "message": "Missing item type\nDetermine if any requested template exists and return path to it.\n\nMigrated from ud_api.php.. - potanin@UD",
+            "line": " scripts/utility.php:1313"
+        },
+        {
+            "message": "Missing item type\nSet default instance.\nTemplate can depend on instance. For example: facebook, PDF, etc.",
+            "line": " scripts/utility.php:1329"
+        },
+        {
+            "message": "Missing item type\nThe goal of function is going through specific filters and return (or print) classes.\nThis function should not be called directly.\nEvery ud plugin/theme should have own short function ( wrapper ) for calling it. E.g., see: wpp_css().\nSo, use it in template as: <div id=\"my_element\" class=\"<?php wpp_css(\"{name_of_template}::my_element\"); ?>\"> </div>\n\nArguments:\n - instance [string] - UD plugin|theme's slug. E.g.: wpp, denali, wpi, etc\n - element [string] - specific element in template which will use the current classes.\n   Element should be called as {template}::{specific_name_of_element}. Where {template} is name of template,\n   where current classes will be used. This standart is optional. You can set any element's name if you want.\n - classes [array] - set of classes which will be used for element.\n - return [boolean] - If false, the function prints all classes like 'class1 class2 class3'",
+            "line": " scripts/utility.php:1360"
+        },
+        {
+            "message": "Missing item type\nReturn simple array of column tables in a table",
+            "line": " scripts/utility.php:1417"
+        },
+        {
+            "message": "Missing item type\nPort of jQuery.extend() function.",
+            "line": " scripts/utility.php:1440"
+        },
+        {
+            "message": "Missing item type\nReturns a URL to a post object based on passed variable.\n\nIf its a number, then assumes its the id, If it resembles a slug, then get the first slug match.",
+            "line": " scripts/utility.php:1471"
+        },
+        {
+            "message": "Missing item type\nUsed to get the current plugin's log created via UD class\n\nIf no log exists, it creates one, and then returns it in chronological order.\n\nExample to view log:\n<code>\nprint_r( self::get_log() );\n</code>\n\n$param string Event description",
+            "line": " scripts/utility.php:1496"
+        },
+        {
+            "message": "Missing item type\nDelete UD log for this plugin.",
+            "line": " scripts/utility.php:1542"
+        },
+        {
+            "message": "Missing item type\nCreates Admin Menu page for UD Log",
+            "line": " scripts/utility.php:1560"
+        },
+        {
+            "message": "Missing item type\nDisplays the UD UI log page.",
+            "line": " scripts/utility.php:1580"
+        },
+        {
+            "message": "Missing item type\nReplace in $str all entries of keys of the given $values\nwhere each key will be rounded by $brackets['left'] and $brackets['right']\nwith the relevant values of the $values",
+            "line": " scripts/utility.php:1631"
+        },
+        {
+            "message": "Missing item type\nWrapper function to send notification with WP-CRM or without one",
+            "line": " scripts/utility.php:1651"
+        },
+        {
+            "message": "Missing item type\nTurns a passed string into a URL slug\n\nArgument 'check_existance' will make the function check if the slug is used by a WordPress post",
+            "line": " scripts/utility.php:1710"
+        },
+        {
+            "message": "Missing item type\nConvert a slug to a more readable string",
+            "line": " scripts/utility.php:1740"
+        },
+        {
+            "message": "Missing item type\nReturns current url",
+            "line": " scripts/utility.php:1753"
+        },
+        {
+            "message": "Missing item type\nPrepares data for SQL query.\n\ni.e. It should be used when $pwdb->prepare cannot be used.\nFor example:\nwe have situation when SQL query could not be prepared by default $wpdb->prepare:\n$titles = array( \"John's appartment\", \" '; DELETE FROM $wpdb->posts;# \" );\n$wpdb->query( \"SELECT ID FROM $wpdb->posts WHERE post_title IN ( '\" . implode (\"','\", UD_Utility::prepare_to_sql( $titles ) ) . \"' ) \" );",
+            "line": " scripts/utility.php:1783"
+        },
+        {
+            "message": "Missing item type\nReturns date and/or time using the WordPress date or time format, as configured.",
+            "line": " scripts/utility.php:1818"
+        },
+        {
+            "message": "Missing item type\nThis function is for the encryption of data",
+            "line": " scripts/utility.php:1855"
+        },
+        {
+            "message": "Missing item type\nThis function decrypts data",
+            "line": " scripts/utility.php:1877"
+        },
+        {
+            "message": "Missing item type\nReturns array of full pathes of files or directories which we try to find.",
+            "line": " scripts/utility.php:1903"
+        },
+        {
+            "message": "Missing item type\nGets complicated html entity e.g. Table and ou|ol\nand removes whitespace characters include new line.\nwe should to do this before use nl2br",
+            "line": " scripts/utility.php:1940"
+        }
+    ]
+}

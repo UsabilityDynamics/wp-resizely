@@ -1,0 +1,43 @@
+{
+  "name": "utility",
+  "version": "0.2.3",
+  "description": "Usability Dynamics general utility classes.",
+  "homepage": "http://github.com/UsabilityDynamics/lib-utility",
+  "private": false,
+  "keywords": [ "utility", "require.js" ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UsabilityDynamics/lib-utility"
+  },
+  "dependencies": {
+    "caolan/async": "*"
+  },
+  "lib": [
+    "lib/utility.php",
+    "lib/loader.php"
+  ],
+  "scripts": [
+    "scripts/require.js",
+    "scripts/utility.js"
+  ],
+  "authors": [
+    {
+      "name": "Andy Potanin",
+      "email": "andy.potanin@usabilitydynamics.com",
+      "homepage": "http://usabilitydynamics.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Maxim Peshkov",
+      "email": "maxim.peshkov@usabilitydynamics.com",
+      "homepage": "http://usabilitydynamics.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Anton Korotkov",
+      "email": "anton.korotkov@usabilitydynamics.com",
+      "homepage": "http://usabilitydynamics.com",
+      "role": "Developer"
+    }
+  ]
+}
