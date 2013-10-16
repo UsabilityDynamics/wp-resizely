@@ -1,6 +1,7 @@
 temp
 node_modules
 npm-debug.log
+wiki
 
 .svn
 .idea
@@ -8,8 +9,10 @@ npm-debug.log
 .DS_Store
 .dynamic
 .Trashes
+._*
 *.sublime-project
 *.sublime-workspace
+localDebug.php
 
 *.seed
 *.log
